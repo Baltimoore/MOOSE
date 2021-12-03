@@ -28,3 +28,8 @@ Route::get('/', function() {
 Route::get('/home', function() {
     return view('registered.home');
 }) -> name('home');
+
+//kalendāra skats, kas kalendārā attēlo plānotās (un bijušās?) medības
+Route::get('/calendar', function() {
+    return view('registered.calendar');
+}) -> name('calendar');
