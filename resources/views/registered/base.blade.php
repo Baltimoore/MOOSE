@@ -58,7 +58,6 @@
 @endsection
 
 @section('scripts')
-
     // Pielipina skatu sarakstu lietotnes augšā kad scrollo
     // Zagts no https://www.w3schools.com/howto/howto_js_sticky_header.asp
     window.onscroll = function(){ stickifier() };
@@ -73,5 +72,6 @@
             viewNavigator.classList.remove("w3-top");
         }
     }
+    
     @yield('moduleScripts')
 @endsection
