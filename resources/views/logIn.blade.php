@@ -18,7 +18,7 @@ reģistrācija
     <!-- Nav nepieciešams augšējais panelis uz doto brīdi -->
 @endsection
 
-@section('saturs')
+@section('content')
     <div class="w3-container w3-center">
         <img style="height:40vh;max-height:700px;max-width:700px;"
              src="/images/logo.svg" alt="Medību biedrības logo">
