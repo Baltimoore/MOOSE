@@ -7,7 +7,7 @@
  - - - - - - - - - - - -->
 
 @section('globalStyles')
-    <!-- Nav nepieciešami globāli izskata mainīgie -->
+    /* Nav nepieciešami globāli izskata mainīgie */
 @endsection
 
 @section('title')
