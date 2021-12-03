@@ -13,8 +13,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Open Sans", sans-serif}
-    .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-    .fa-anchor,.fa-coffee {font-size:200px}
+    .w3-bar,h1,button, .w3-button {font-family: "Montserrat", sans-serif}
+    :root {
+        --logo-bone-light: #d5e8e1;
+        --logo-bone-dark: #a8bab2;
+        --logo-fur-light: #82b3a8;
+        --logo-fur-dark: #69938a;
+        --logo-outline: #2b432f;
+    }
     @yield('globalStyles')
 </style>
 

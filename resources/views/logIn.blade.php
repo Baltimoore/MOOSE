@@ -31,7 +31,7 @@ MOOSE - reģistrācija
             <label for="psw"><b>Parole</b></label>
             <input class="w3-input" type="password" placeholder="Ievadiet paroli" name="psw" required>
             <br>
-            <a class="w3-button w3-teal" type="submit" href="{{ route('home') }}">Pieslēgties</a>
+            <a class="w3-button" style="background-color:var(--logo-fur-light);" type="submit" href="{{ route('home') }}"><b>Pieslēgties</b></a>
             <br>
             <label><input class="w3-check" type="checkbox" checked="checked"> Saglabāt lietotājvārdu</label>
         </div>
