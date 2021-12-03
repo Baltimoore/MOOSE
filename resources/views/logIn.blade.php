@@ -11,7 +11,7 @@
 @endsection
 
 @section('title')
-reģistrācija
+Reģistrācija
 @endsection
 
 @section('navbar')
