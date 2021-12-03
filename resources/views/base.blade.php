@@ -15,10 +15,10 @@
 </style>
 
 <body>
-    <div class="w3-top">
+    <div id="top">
         @yield('navbar')
     </div>
-    <div class="content">
+    <div id="body" class="w3-container">
         @yield('content')
     </div>
 

@@ -19,6 +19,18 @@
         background-color: var(--logo-bone-dark);
         font-weight: bold;
     }
+    #logo {
+        font-size: 3vh;
+        font-weight: bold;
+        padding: 10px;
+        background-color: var(--logo-fur-light);
+        color: var(--logo-outline);
+    }
+    #logo img {
+        height: 8vh;
+        max-height: 100px;
+        max-width: 100px;
+    }
     @yield('moduleStyle')
 @endsection
 
@@ -27,6 +39,11 @@
 @endsection
 
 @section('navbar')
+    <div id="logo"><label>
+        <img src="/images/logo.svg" alt="Medību biedrības logo">
+        Mednieku biedrība "Alnis"
+    </label></div>
+
     <div id="navbar" class="w3-bar" style="background-color:var(--logo-outline)">
         <a id="home" href="{{ route('home') }}" class="w3-bar-item w3-button">Centrs</a>
         <a id="calendar" href="{{ route('calendar') }}" class="w3-bar-item w3-button">Kalendārs</a>
@@ -41,7 +58,20 @@
 @endsection
 
 @section('scripts')
-    <!-- Uz doto brīdi būs tikai redirecti starp mājaslapām;
-        nekāda papildus funkcionalitāte maketam nav plānota -->
+
+    // Pielipina skatu sarakstu lietotnes augšā kad scrollo
+    // Zagts no https://www.w3schools.com/howto/howto_js_sticky_header.asp
+    window.onscroll = function(){ stickifier() };
+
+    var viewNavigator = document.getElementById("navbar");
+    var logoArea = viewNavigator.offsetTop;
+    
+    function stickifier() {
+        if (window.pageYOffset > logoArea) {
+            viewNavigator.classList.add("w3-top");
+        } else {
+            viewNavigator.classList.remove("w3-top");
+        }
+    }
     @yield('moduleScripts')
 @endsection
