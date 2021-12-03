@@ -1,0 +1,9 @@
+:root {
+    --logo-bone-light: #d5e8e1;
+    --logo-bone-dark: #a8bab2;
+    --logo-fur-light: #82b3a8;
+    --logo-fur-dark: #69938a;
+    --logo-outline: #2b432f;
+}
+body,h2,h3,h4,h5,h6 { font-family: "Open Sans", sans-serif }
+h1,button,.w3-bar,.w3-button { font-family: "Montserrat", sans-serif }

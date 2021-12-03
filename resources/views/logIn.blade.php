@@ -11,7 +11,7 @@
 @endsection
 
 @section('title')
-MOOSE - reģistrācija
+reģistrācija
 @endsection
 
 @section('navbar')

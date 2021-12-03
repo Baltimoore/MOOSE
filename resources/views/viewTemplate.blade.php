@@ -10,7 +10,7 @@
 @endsection
 
 @section('title')
-MOOSE - 
+<!-- Ievadi tikai konkrētā skata nosaukumu; nekas cits nav nepieciešams -->
 @endsection
 
 @section('navbar')
