@@ -22,6 +22,7 @@
 
 div#userHead {
     border-color: var(--logo-outline);
+    background-color: var(--logo-fur-light);
     grid-template-columns: 100px 550px;
     grid-template-rows: 50px 50px;
 }
@@ -54,7 +55,9 @@ div#userHead {
         grid-row: 2;
     }
 
-
+#userBody {
+    background-color: var(--logo-bone-light);
+}
 #userBody > div {
     border-bottom: 2px dotted var(--logo-fur-dark);
 }
@@ -75,7 +78,7 @@ div#userHead {
         font-style: italic;
     }
 
-#eventsParticipating { padding: 20px; }
+#eventsParticipating { padding: 0 20px; }
     #eventsParticipating > div {
         display: grid;
         grid-template-columns: 100px 80px 100px auto 100px;
@@ -86,9 +89,15 @@ div#userHead {
     #eventsParticipating > div:first-child {
         border-bottom: 2px solid var(--logo-fur-dark);
         font-weight: bold;
-        padding:auto;
     }
     #eventsParticipating > div:last-child { border: 0; }
+
+#eventsParticipating .w3-button {
+    background-color: var(--logo-fur-dark);
+}
+#eventsParticipating .w3-button:hover {
+    background-color: var(--logo-bone-dark)!important;
+}
 @endsection
 
 @section('moduleTitle')
@@ -134,11 +143,18 @@ Profils
             <p>Atteikties no piedalīšanās medībās</p>
         </div>
         <div id="event1">
-            <p id="eventOrganiser">Juris Padels</p>
-            <p id="eventType">Medības</p>
-            <p id="eventDate">25-05-2022</p>
-            <p id="eventLocation"><a href="{{-- route('map') --}}">Mežs "Zemzariņi"</a></p>
-            <button id="eventDeny">Atteikties</button>
+            <p id="event1Organiser">Juris Padels</p>
+            <p id="event1Type">Medības</p>
+            <p id="event1Date">21-05-2022</p>
+            <p id="event1Location"><a href="{{-- route('map') --}}">Mežs "Zemzariņi"</a></p>
+            <button id="event1Deny" class="w3-button w3-round-large">Atteikties</button>
+        </div>
+        <div id="event2">
+            <p id="event2Organiser">Miķelis Zindars</p>
+            <p id="event2Type">Dzinēj-medības</p>
+            <p id="event2Date">25-05-2022</p>
+            <p id="event2Location"><a href="{{-- route('map') --}}">Mežs "Klubiņi"</a></p>
+            <button id="event2Deny" class="w3-button w3-round-large">Atteikties</button>
         </div>
     </div>
 </div>
