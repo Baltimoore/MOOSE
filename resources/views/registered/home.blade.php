@@ -15,6 +15,7 @@ centrālais skats
 
 @section('moduleContent')
     <!-- Mājaslapas galvenā satura sadaļa -->
+    <h1>Galvenais lietotnes skats, kurā parādās visi moduļi samazinātā skatā</h1>
 @endsection
 
 @section('moduleScripts')
