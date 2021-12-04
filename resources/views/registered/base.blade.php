@@ -1,10 +1,10 @@
 @extends('base')
 
-<!-- - - - - - - - - - - -
+{{-- - - - - - - - - - - -
  - - Gatis Ieviņš, gi20002
  - - lietotnes centrālais skats, kura saturu
  - - aizpilda katrs lietotnes modulis pa savam
- - - - - - - - - - - - -->
+ - - - - - - - - - - - --}}
 
 @section('globalStyles')
     #navbar a.w3-button {

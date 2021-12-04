@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!-- - - - - - - - - - - -
+{{-- - - - - - - - - - - -
  - - Gatis Ieviņš, gi20002
  - - lapas skelets 'zagts' no https://www.w3schools.com/w3css/w3css_templates.asp [Start Page template]
- - - - - - - - - - - - -->
+ - - - - - - - - - - - --}}
 <html lang="en">
 <title>@yield('title')</title>
 <meta charset="UTF-8">
