@@ -130,7 +130,7 @@ Profils
             </div>
             <div id="userLicenseNr" class="userData">
                 <p>Medību licenses nr:</p>
-                <p>am1597</p>
+                <p>am15971</p>
             </div>
         </div>
     </div>
