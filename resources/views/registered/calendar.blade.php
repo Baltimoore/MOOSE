@@ -78,8 +78,334 @@ Medību kalendārs
 @endsection
 
 @section('moduleContent')
-    {{-- Moduļa galvenā satura sadaļa --}}    
-    <h1>Šeit atrodas visu moduļu mazākas sadaļas</h1>
+    {{-- Moduļa galvenā satura sadaļa --}}
+    
+    <div id="calendarWrapper">
+        <div id="calendarController">
+            <button id="mPrevious" class="w3-button w3-circle"><</button> <!-- Nomaina datumus uz iepriekšējo mēnesi -->
+            <h1 id="M-Y">Maijs 2022</h1>
+            <button id="mFollowing" class="w3-button w3-circle">></button> <!-- Nomaina datumus uz nākamo mēnesi -->
+        </div>
+        <div id="calendarContent">
+            <div id="calendarWeekdays">
+                <div>Pirmdiena</div>
+                <div>Otrdiena</div>
+                <div>Trešdiena</div>
+                <div>Ceturdiena</div>
+                <div>Piektdiena</div>
+                <div>Sestdiena</div>
+                <div>Svētdiena</div>
+            </div>
+            <div id="calendarDates">
+                <div class="week">
+                    <div class="day otherMonth">
+                        <div class="date">25</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day otherMonth">
+                        <div class="date">26</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day otherMonth">
+                        <div class="date">27</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day otherMonth">
+                        <div class="date">28</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day otherMonth">
+                        <div class="date">29</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day otherMonth">
+                        <div class="date">30</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">1</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="week">
+                    <div class="day">
+                        <div class="date">2</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">3</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">4</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">5</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">6</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">7</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">8</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="week">
+                    <div class="day">
+                        <div class="date">9</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">10</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">11</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">12</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">13</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">14</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">15</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="week">
+                    <div class="day">
+                        <div class="date">16</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">17</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">18</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">19</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">20</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">21</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">22</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="week">
+                    <div class="day">
+                        <div class="date">23</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">24</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">25</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">26</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">27</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">28</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">29</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="week">
+                    <div class="day">
+                        <div class="date">30</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day">
+                        <div class="date">31</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day otherMonth">
+                        <div class="date">1</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day otherMonth">
+                        <div class="date">2</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day otherMonth">
+                        <div class="date">3</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day otherMonth">
+                        <div class="date">4</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                    <div class="day otherMonth">
+                        <div class="date">5</div>
+                        <div class="event">
+                            <div class="event-desc"></div>
+                            <div class="event-time"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('moduleScripts')
