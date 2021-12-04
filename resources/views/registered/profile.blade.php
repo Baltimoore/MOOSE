@@ -14,13 +14,14 @@
     grid-template-columns: var(--display-minWidth)-10px;
 }
 #userWrapper > div {
-    border: 2px solid var(--logo-outline);
+    border: 2px solid var(--logo-fur-dark);
     border-radius: 25px;
     display: grid;
     margin-bottom: 30px;
 }
 
-#userHead {
+div#userHead {
+    border-color: var(--logo-outline);
     grid-template-columns: 100px 550px;
     grid-template-rows: 50px 50px;
 }
@@ -53,8 +54,6 @@
         grid-row: 2;
     }
 
-#userBody {
-    border: 2px solid var(--logo-fur-dark);}
 
 #userBody > div {
     border-bottom: 2px dotted var(--logo-fur-dark);
@@ -75,6 +74,21 @@
     #userBody div.userData > p:last-child {
         font-style: italic;
     }
+
+#eventsParticipating { padding: 20px; }
+    #eventsParticipating > div {
+        display: grid;
+        grid-template-columns: 100px 80px 100px auto 100px;
+        border-bottom: 1px dashed var(--logo-fur-light);
+        align-items: center;
+        text-align: center;
+    }
+    #eventsParticipating > div:first-child {
+        border-bottom: 2px solid var(--logo-fur-dark);
+        font-weight: bold;
+        padding:auto;
+    }
+    #eventsParticipating > div:last-child { border: 0; }
 @endsection
 
 @section('moduleTitle')
@@ -97,7 +111,7 @@ Profils
             </div>
             <div id="userPhone" class="userData">
                 <p>Telefona numurs:</p>
-                <p>+371 16872687</p>
+                <p>16872687</p>
             </div>
         </div>
         <div id="userHunting">
@@ -111,8 +125,21 @@ Profils
             </div>
         </div>
     </div>
-    <div id="userParticipating">
-        
+    <div id="eventsParticipating">
+        <div id="titles">
+            <p>Medību organizators</p>
+            <p>Medību tips</p>
+            <p>Medību norises datums</p>
+            <p>Medību norises vieta</p>
+            <p>Atteikties no piedalīšanās medībās</p>
+        </div>
+        <div id="event1">
+            <p id="eventOrganiser">Juris Padels</p>
+            <p id="eventType">Medības</p>
+            <p id="eventDate">25-05-2022</p>
+            <p id="eventLocation"><a href="{{-- route('map') --}}">Mežs "Zemzariņi"</a></p>
+            <button id="eventDeny">Atteikties</button>
+        </div>
     </div>
 </div>
 @endsection
