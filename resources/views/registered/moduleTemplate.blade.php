@@ -5,7 +5,7 @@
  - - īss moduļa apraksts
  - - - - - - - - - - - -->
 
-@section('moduleStyles')
+@section('moduleStyle')
     /* Globālie moduļa izskata mainīgie */
 @endsection
 

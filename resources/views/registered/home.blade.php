@@ -5,7 +5,7 @@
  - - lietotnes centrālais skats, no kura var pāriet uz visiem pārējiem
  - - - - - - - - - - - -->
 
-@section('moduleStyles')
+@section('moduleStyle')
     /* Nav globāli moduļa izskata mainīgie */
 @endsection
 
