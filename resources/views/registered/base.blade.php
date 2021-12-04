@@ -39,17 +39,19 @@
 @endsection
 
 @section('navbar')
-    <div id="logo"><label>
-        <img src="/images/logo.svg" alt="Medību biedrības logo">
-        Mednieku biedrība "Alnis"
-    </label></div>
+    <div id="logo">
+        <label>
+            <img src="/images/logo.svg" alt="Medību biedrības logo">
+            Mednieku biedrība "Alnis"
+        </label>
+    </div>
 
     <div id="navbar" class="w3-bar" style="background-color:var(--logo-outline)">
         <a id="home" href="{{ route('home') }}" class="w3-bar-item w3-button">Centrs</a>
         <a id="calendar" href="{{ route('calendar') }}" class="w3-bar-item w3-button">Kalendārs</a>
         <a id="map" href="#" class="w3-bar-item w3-button">Karte</a>
         <a id="inventory" href="#" class="w3-bar-item w3-button">Inventārs</a>
-        <a id="profile" href="#" class="w3-bar-item w3-button w3-right">Profils</a>
+        <a id="profile" href="{{ route('profile') }}" class="w3-bar-item w3-button w3-right">Profils</a>
     </div>
 @endsection
 

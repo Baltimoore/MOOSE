@@ -8,7 +8,7 @@
 @section('moduleStyle')
 #calendarWrapper {
     padding: 30px;
-    padding-top:15px
+    padding-top: 15px;
 }
 #calendarController {
     display: flex;

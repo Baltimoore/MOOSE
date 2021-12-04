@@ -4,12 +4,14 @@
     --logo-fur-light: #82b3a8;
     --logo-fur-dark: #69938a;
     --logo-outline: #2b432f;
+
+    --display-minWidth: 700px;
 }
 body,h2,h3,h4,h5,h6 { font-family: "Open Sans", sans-serif }
 h1,button,.w3-bar,.w3-button { font-family: "Montserrat Alternates", sans-serif }
 
-body{
-   min-width: 670px;        /* Suppose you want minimum width of 1000px */
+body {
+   min-width: var(--display-minWidth);        /* Suppose you want minimum width of 1000px */
    width: auto !important;  /* Firefox will set width as auto */
-   width: 670px;            /* As IE6 ignores !important it will set width as 1000px; */
+   width: var(--display-minWidth);            /* As IE6 ignores !important it will set width as 1000px; */
 }

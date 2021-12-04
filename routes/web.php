@@ -33,3 +33,8 @@ Route::get('/home', function() {
 Route::get('/calendar', function() {
     return view('registered.calendar');
 }) -> name('calendar');
+
+//profila skats, kas attēlo lietotāja informāciju; līdzīgi kā CSDD
+Route::get('/profile', function() {
+    return view('registered.profile');
+}) -> name('profile');
