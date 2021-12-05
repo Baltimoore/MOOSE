@@ -63,16 +63,6 @@ Inventārs
             <p class="description">Rudens medību kombinzons; izskaties itkā būtu lapu čupa</p>
             <p class="amount">5 gab.</p>
         </div>
-        <div id="inv2" class="empty">
-            <p class="name"></p>
-            <p class="description"></p>
-            <p class="amount"></p>
-        </div>
-        <div id="inv3" class="empty">
-            <p class="name"></p>
-            <p class="description"></p>
-            <p class="amount"></p>
-        </div>
     </div>
 
     <div id="inventoryTech" class="inventoryType">
@@ -121,11 +111,6 @@ Inventārs
             <p class="name">Mežacūkas kāja (ar spalvu)</p>
             <p class="description">Laba lieta ko dot savam suņam grauzt. Sīkas gaļas driskas varbūt pie šīm ir palikušās.</p>
             <p class="amount">3 gab.</p>
-        </div>
-        <div id="inv12" class="empty">
-            <p class="name"></p>
-            <p class="description"></p>
-            <p class="amount"></p>
         </div>
     </div>
 
