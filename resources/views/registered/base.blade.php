@@ -7,30 +7,33 @@
  - - - - - - - - - - - --}}
 
 @section('globalStyles')
-    #navbar a.w3-button {
-        align: center;
-        min-width:120px;
-        width: 8vw;
-        max-width:200px;
-        color: var(--logo-bone-light)!important;
-    }
-    #navbar a.w3-button:hover {
-        color: var(--logo-outline)!important;
-        background-color: var(--logo-bone-dark)!important;
-        font-weight: bold;
-    }
-    #logo {
-        font-size: 3vh;
-        font-weight: bold;
-        padding: 10px;
-        background-color: var(--logo-fur-light);
-        color: var(--logo-outline);
-    }
-    #logo img {
-        height: 8vh;
-        max-height: 100px;
-        max-width: 100px;
-    }
+#navbar a.w3-button {
+    align: center;
+    min-width:120px;
+    width: 8vw;
+    max-width:200px;
+    color: var(--logo-bone-light)!important;
+    background-color:var(--logo-outline)!important;
+}
+#navbar a.w3-button:hover {
+    color: var(--logo-outline)!important;
+    background-color: var(--logo-bone-dark)!important;
+    font-weight: bold;
+}
+#logo {
+    font-size: 3vh;
+    font-weight: bold;
+    padding: 10px;
+    background-color: var(--logo-fur-light);
+    color: var(--logo-outline);
+}
+#logo img {
+    height: 8vh;
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.w3-dropdown-content { min-width:0; }
     @yield('moduleStyle')
 @endsection
 
@@ -51,7 +54,12 @@
         <a id="calendar" href="{{ route('calendar') }}" class="w3-bar-item w3-button">Kalendārs</a>
         <a id="map" href="#" class="w3-bar-item w3-button">Karte</a>
         <a id="inventory" href="{{ route('inventory') }}" class="w3-bar-item w3-button">Inventārs</a>
-        <a id="profile" href="{{ route('profile') }}" class="w3-bar-item w3-button w3-right">Profils</a>
+        <div class="w3-dropdown-hover w3-right">
+            <a id="profile" class="w3-button" href="{{ route('profile') }}">Profils</a>
+            <div class="w3-dropdown-content w3-bar-block" style="right:0">
+                <a id="profile-list" href="{{ route('profile-list') }}" class="w3-bar-item w3-button w3-right">Profilu saraksts</a>
+            </div>
+        </div>
     </div>
 @endsection
 

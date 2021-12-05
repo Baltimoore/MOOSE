@@ -10,7 +10,7 @@
 .inventoryType {
     border: 2px solid var(--logo-fur-dark);
     border-radius: 25px;
-    margin-top: 30px;
+    margin: 30px 15px;
     padding: 0 20px;
     display: grid;
 }

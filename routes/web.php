@@ -39,6 +39,11 @@ Route::get('/profile', function() {
     return view('registered.profile');
 }) -> name('profile');
 
+//profilu saraksts, kas attēlo visus biedrībā reģistrētos dalībniekus
+Route::get('/profile-all', function() {
+    return view('registered.profile-list');
+}) -> name('profile-list');
+
 //inventāra skats, kas attēlo visu ekipējumu, kas tieši pieder biedrībai
 Route::get('/inventory', function() {
     return view('registered.inventory');
