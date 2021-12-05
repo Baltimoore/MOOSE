@@ -76,24 +76,28 @@ div.day > div.date {
 div.day > div.date.hunt {
     background-color: firebrick;
 }
-    .date > .w3-dropdown-content {
-        background-color: var(--logo-fur-light);
-        width: 200px;
-        padding: 10px;
-        grid-template-columns: 50px auto;
-    }
-    .date.w3-dropdown-hover:hover > .w3-dropdown-content {
-        display: grid;
-    }
-    .date > .w3-dropdown-content > label { text-align:left; }
-    .date > .w3-dropdown-content > b { text-align:center; }
-    .date > .w3-dropdown-content > a.w3-button {
-        grid-column: 1 / 3;
-        padding: 10px;
-        font-weight: bold;
-        color: var(--logo-bone-light);
-        background-color: var(--logo-outline);
-    }
+
+.date > .w3-dropdown-content {
+    background-color: var(--logo-fur-light);
+    width: 200px;
+    padding: 10px;
+    grid-template-columns: 50px auto;
+}
+
+.date.w3-dropdown-hover:hover > .w3-dropdown-content {
+    display: grid;
+}
+.date > .w3-dropdown-content > label { text-align:left; }
+.date > .w3-dropdown-content > b { text-align:center; }
+.date > .w3-dropdown-content > b.huntNone { grid-column: 1 / 3 }
+.date > .w3-dropdown-content > a.w3-button {
+    grid-column: 1 / 3;
+    padding: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+    color: var(--logo-bone-light);
+    background-color: var(--logo-outline);
+}
 @endsection
 
 @section('moduleTitle')
@@ -198,7 +202,13 @@ Medību kalendārs
                 </div>
                 <div class="week">
                     <div class="day">
-                        <div class="date">16</div>
+                        <div class="w3-dropdown-hover date">16
+                            <div class="w3-dropdown-content w3-round-large">
+                                <label>Datums:</label> <b id="huntDate">16. maijs</b>
+                                <b class="huntNone">Datumā nav reģistrētu notikumu</b>
+                                <a class="w3-button w3-round-large" href="{{-- route('eventCUD') --}}">Reģistrēt notikumu</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="day">
                         <div class="date">17</div>
@@ -234,17 +244,18 @@ Medību kalendārs
                         <div class="date">24</div>
                     </div>
                     <div class="day">
-                        <div class="w3-dropdown-hover date hunt">25
+                        <div class="date">25</div>
+                    </div>
+                    <div class="day">
+                        <div class="w3-dropdown-hover date hunt">26
                             <div class="w3-dropdown-content w3-round-large">
-                                <label>Datums:</label> <b id="huntDate">25. maijs</b>
+                                <label>Datums:</label> <b id="huntDate">26. maijs</b>
                                 <label>Tips:</label> <b id="huntType">Medības</b>
                                 <label>Vada:</label> <b id="huntLead">Miķelis Zindars</b>
                                 <a class="w3-button w3-round-large" href="#">Pieteikties</a>
+                                <a class="w3-button w3-round-large" href="{{-- route('eventCUD') --}}">Labot notikumu</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="day">
-                        <div class="date">26</div>
                     </div>
                     <div class="day">
                         <div class="date">27</div>

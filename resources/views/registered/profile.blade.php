@@ -152,7 +152,7 @@ Profils
         <div id="event2">
             <p id="event2Organiser">Miķelis Zindars</p>
             <p id="event2Type">Dzinēj-medības</p>
-            <p id="event2Date">25-05-2022</p>
+            <p id="event2Date">26-05-2022</p>
             <p id="event2Location"><a href="{{-- route('map') --}}">Mežs "Klubiņi"</a></p>
             <button id="event2Deny" class="w3-button w3-round-large">Atteikties</button>
         </div>
