@@ -51,6 +51,7 @@ div#userHead {
         }
     #userEdit {
         border-top: 1px dashed var(--logo-fur-light);
+        padding-top:10px;
         grid-column: 2;
         grid-row: 2;
     }
@@ -98,6 +99,16 @@ div#userHead {
 #eventsParticipating .w3-button:hover {
     background-color: var(--logo-bone-dark)!important;
 }
+
+/* Izliekamies, ka notiktu labošana */
+.edit {
+    padding: 3px 5px;
+    height: 30px;
+    width: 150px;
+    margin-top: 10px;
+    background: var(--logo-bone-dark);
+    border: 1px solid var(--logo-outline);
+}
 @endsection
 
 @section('moduleTitle')
@@ -109,52 +120,29 @@ Profils
 <div id="userWrapper">
     <div id="userHead">
         <div id="userImage"><img src="/images/logo.svg" alt="Lietotāja profila attēls"></div>
-        <div id="userID"><span id="userName">Alnis Mūsis</span> - <span id="userRole">biedrības vadītājs</span></div>
-        <a id="userEdit" href="#">Labot profila informāciju</a>
+        <div id="userID"><span id="userName" class="edit">Alnis Mūsis</span> - <span id="userRole">biedrības vadītājs</span></div>
+        <a id="userEdit" href="#">Mainīt attēlu</a>
     </div>
     <div id="userBody">
         <div id="userPassport">
             <div id="userBirthDate" class="userData">
                 <p>Personas kods:</p>
-                <p>04121974-59734</p>
+                <div class="edit">04121974-59734</div>
             </div>
             <div id="userPhone" class="userData">
                 <p>Telefona numurs:</p>
-                <p>16872687</p>
+                <div class="edit">16872687</div>
             </div>
         </div>
         <div id="userHunting">
             <div id="userLicenseExists" class="userData">
                 <p>Ir medību license?</p>
-                <p>Jā</p>
+                <p>Jā <input class="w3-check" type="checkbox" checked="checked"> Nē <input class="w3-check" type="checkbox"></p>
             </div>
             <div id="userLicenseNr" class="userData">
                 <p>Medību licenses nr:</p>
-                <p>am15971</p>
+                <div class="edit">am15971</div>
             </div>
-        </div>
-    </div>
-    <div id="eventsParticipating">
-        <div id="titles">
-            <p>Medību organizators</p>
-            <p>Medību tips</p>
-            <p>Medību norises datums</p>
-            <p>Medību norises vieta</p>
-            <p>Atteikties no piedalīšanās medībās</p>
-        </div>
-        <div id="event1">
-            <p id="event1Organiser">Juris Padels</p>
-            <p id="event1Type">Medības</p>
-            <p id="event1Date">21-05-2022</p>
-            <p id="event1Location"><a href="{{-- route('map') --}}">Mežs "Zemzariņi"</a></p>
-            <button id="event1Deny" class="w3-button w3-round-large">Atteikties</button>
-        </div>
-        <div id="event2">
-            <p id="event2Organiser">Miķelis Zindars</p>
-            <p id="event2Type">Dzinēj-medības</p>
-            <p id="event2Date">26-05-2022</p>
-            <p id="event2Location"><a href="{{-- route('map') --}}">Mežs "Klubiņi"</a></p>
-            <button id="event2Deny" class="w3-button w3-round-large">Atteikties</button>
         </div>
     </div>
 </div>
