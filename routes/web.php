@@ -38,3 +38,8 @@ Route::get('/calendar', function() {
 Route::get('/profile', function() {
     return view('registered.profile');
 }) -> name('profile');
+
+//inventāra skats, kas attēlo visu ekipējumu, kas tieši pieder biedrībai
+Route::get('/inventory', function() {
+    return view('registered.inventory');
+}) -> name('inventory');
