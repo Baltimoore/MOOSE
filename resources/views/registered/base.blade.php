@@ -9,14 +9,13 @@
 @section('globalStyles')
     #navbar a.w3-button {
         align: center;
-        color: var(--logo-bone-light);
         min-width:120px;
         width: 8vw;
         max-width:200px;
     }
     #navbar a.w3-button:hover {
-        color: var(--logo-outline);
-        background-color: var(--logo-bone-dark);
+        color: var(--logo-outline)!important;
+        background-color: var(--logo-bone-dark)!important;
         font-weight: bold;
     }
     #logo {
