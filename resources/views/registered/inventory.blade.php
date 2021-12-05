@@ -6,11 +6,6 @@
  - - - - - - - - - - - --}}
 
 @section('moduleStyle')
-.inventoryWrapper {
-    display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: var(--display-minWidth)-10px;
-}
 
 .inventoryType {
     border: 2px solid var(--logo-fur-dark);
