@@ -178,7 +178,7 @@ Medību kalendārs
                         </div>
                     </div>
                     <div class="day">
-                        <div class="date">6</div>
+                        <div class="date" style="background-color:firebrick">6</div>
                         <div class="event">
                             <div class="event-desc"></div>
                             <div class="event-time"></div>
@@ -221,7 +221,7 @@ Medību kalendārs
                             <div class="event-time"></div>
                         </div>
                     </div>
-                    <div class="day">
+                    <div class="day" style="border:2px solid firebrick">
                         <div class="date">12</div>
                         <div class="event">
                             <div class="event-desc"></div>
@@ -236,7 +236,7 @@ Medību kalendārs
                         </div>
                     </div>
                     <div class="day">
-                        <div class="date">14</div>
+                        <div class="date" style="background-color:firebrick">14</div>
                         <div class="event">
                             <div class="event-desc"></div>
                             <div class="event-time"></div>
@@ -287,7 +287,7 @@ Medību kalendārs
                         </div>
                     </div>
                     <div class="day">
-                        <div class="date">21</div>
+                        <div class="date" style="background-color:firebrick">21</div>
                         <div class="event">
                             <div class="event-desc"></div>
                             <div class="event-time"></div>
@@ -317,7 +317,7 @@ Medību kalendārs
                         </div>
                     </div>
                     <div class="day">
-                        <div class="date">25</div>
+                        <div class="date" style="background-color:firebrick">25</div>
                         <div class="event">
                             <div class="event-desc"></div>
                             <div class="event-time"></div>
