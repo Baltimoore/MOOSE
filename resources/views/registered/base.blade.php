@@ -12,6 +12,7 @@
         min-width:120px;
         width: 8vw;
         max-width:200px;
+        color: var(--logo-bone-light)!important;
     }
     #navbar a.w3-button:hover {
         color: var(--logo-outline)!important;
