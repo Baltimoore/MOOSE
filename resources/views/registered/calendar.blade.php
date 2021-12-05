@@ -62,7 +62,7 @@
         background-color: var(--logo-bone-dark);
     }
 
-.date {
+div.day > div.date {
     background-color: var(--logo-outline);
     color: var(--logo-bone-light);
     padding: 5px;
@@ -71,6 +71,29 @@
 	border-radius: 50%;
     float: right;
 }
+
+/* Medību info lietas */
+div.day > div.date.hunt {
+    background-color: firebrick;
+}
+    .date > .w3-dropdown-content {
+        background-color: var(--logo-fur-light);
+        width: 200px;
+        padding: 10px;
+        grid-template-columns: 50px auto;
+    }
+    .date.w3-dropdown-hover:hover > .w3-dropdown-content {
+        display: grid;
+    }
+    .date > .w3-dropdown-content > label { text-align:left; }
+    .date > .w3-dropdown-content > b { text-align:center; }
+    .date > .w3-dropdown-content > a.w3-button {
+        grid-column: 1 / 3;
+        padding: 10px;
+        font-weight: bold;
+        color: var(--logo-bone-light);
+        background-color: var(--logo-outline);
+    }
 @endsection
 
 @section('moduleTitle')
@@ -100,307 +123,160 @@ Medību kalendārs
                 <div class="week">
                     <div class="day otherMonth">
                         <div class="date">25</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day otherMonth">
                         <div class="date">26</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day otherMonth">
                         <div class="date">27</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day otherMonth">
                         <div class="date">28</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day otherMonth">
                         <div class="date">29</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day otherMonth">
                         <div class="date">30</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">1</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                 </div>
                 <div class="week">
                     <div class="day">
                         <div class="date">2</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">3</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">4</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">5</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
-                        <div class="date" style="background-color:firebrick">6</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
+                        <div class="w3-dropdown-hover date hunt">6
+                            <div class="w3-dropdown-content w3-round-large">
+                                <label>Datums:</label> <b id="huntDate">6. maijs</b>
+                                <label>Tips:</label> <b id="huntType">Medības</b>
+                                <label>Vada:</label> <b id="huntLead">Alnis Mūsis</b>
+                            </div>
                         </div>
                     </div>
                     <div class="day">
                         <div class="date">7</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">8</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                 </div>
                 <div class="week">
                     <div class="day">
                         <div class="date">9</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">10</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">11</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day" style="border:2px solid firebrick">
-                        <div class="date">12</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
+                        <div class="date">12
                         </div>
                     </div>
                     <div class="day">
                         <div class="date">13</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
-                        <div class="date" style="background-color:firebrick">14</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
+                        <div class="date hunt">14</div>
                     </div>
                     <div class="day">
                         <div class="date">15</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                 </div>
                 <div class="week">
                     <div class="day">
                         <div class="date">16</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">17</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">18</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">19</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">20</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
-                        <div class="date" style="background-color:firebrick">21</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
+                        <div class="w3-dropdown-hover date hunt">21
+                            <div class="w3-dropdown-content w3-round-large">
+                                <label>Datums:</label> <b id="huntDate">21. maijs</b>
+                                <label>Tips:</label> <b id="huntType">Medības</b>
+                                <label>Vada:</label> <b id="huntLead">Juris Padels</b>
+                                <a class="w3-button w3-round-large" href="#">Pieteikties</a>
+                            </div>
                         </div>
                     </div>
                     <div class="day">
                         <div class="date">22</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                 </div>
                 <div class="week">
                     <div class="day">
                         <div class="date">23</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">24</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
-                        <div class="date" style="background-color:firebrick">25</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
+                        <div class="w3-dropdown-hover date hunt">25
+                            <div class="w3-dropdown-content w3-round-large">
+                                <label>Datums:</label> <b id="huntDate">25. maijs</b>
+                                <label>Tips:</label> <b id="huntType">Medības</b>
+                                <label>Vada:</label> <b id="huntLead">Miķelis Zindars</b>
+                                <a class="w3-button w3-round-large" href="#">Pieteikties</a>
+                            </div>
                         </div>
                     </div>
                     <div class="day">
                         <div class="date">26</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">27</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">28</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">29</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                 </div>
                 <div class="week">
                     <div class="day">
                         <div class="date">30</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day">
                         <div class="date">31</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day otherMonth">
                         <div class="date">1</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day otherMonth">
                         <div class="date">2</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day otherMonth">
                         <div class="date">3</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day otherMonth">
                         <div class="date">4</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                     <div class="day otherMonth">
                         <div class="date">5</div>
-                        <div class="event">
-                            <div class="event-desc"></div>
-                            <div class="event-time"></div>
-                        </div>
                     </div>
                 </div>
             </div>
