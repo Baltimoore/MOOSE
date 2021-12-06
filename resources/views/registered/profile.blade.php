@@ -92,12 +92,6 @@ div#userHead {
     }
     #eventsParticipating > div:last-child { border: 0; }
 
-#eventsParticipating .w3-button {
-    background-color: var(--logo-fur-dark);
-}
-#eventsParticipating .w3-button:hover {
-    background-color: var(--logo-bone-dark)!important;
-}
 @endsection
 
 @section('moduleTitle')

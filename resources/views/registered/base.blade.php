@@ -7,33 +7,25 @@
  - - - - - - - - - - - --}}
 
 @section('globalStyles')
-#navbar a.w3-button {
-    align: center;
-    min-width:120px;
-    width: 8vw;
-    max-width:200px;
-    color: var(--logo-bone-light)!important;
-    background-color:var(--logo-outline)!important;
-}
-#navbar a.w3-button:hover {
-    color: var(--logo-outline)!important;
-    background-color: var(--logo-bone-dark)!important;
-    font-weight: bold;
-}
 #logo {
-    font-size: 3vh;
+    font-size: 4vh;
     font-weight: bold;
     padding: 10px;
     background-color: var(--logo-fur-light);
     color: var(--logo-outline);
 }
-#logo img {
-    height: 8vh;
-    max-height: 100px;
-    max-width: 100px;
+    #logo img {
+        height: 8vh;
+        max-height: 100px;
+        max-width: 100px;
+    }
+#navbar a.w3-button {
+    min-width:120px;
+    width: 8vw;
+    max-width:200px;
 }
-
-.w3-dropdown-content { min-width:0; }
+    #navbar > div.w3-dropdown-hover { margin: -2px 0; }
+    #navbar > div.w3-dropdown-hover > .w3-dropdown-content { min-width:0; margin-top:-2px}
     @yield('moduleStyle')
 @endsection
 

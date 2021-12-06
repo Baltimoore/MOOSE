@@ -53,13 +53,6 @@
     #userRun::before { content: 'Dzinēji'; }
     #userOther::before { content: 'Cits'; }
 
-/* Dzēšanas pogas */
-div.delete {
-    padding: 10px;
-    font-weight: bold;
-    color:var(--logo-fur-light);
-    background-color:var(--logo-outline)!important;
-}
 @endsection
 
 @section('moduleTitle')

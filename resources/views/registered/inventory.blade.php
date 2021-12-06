@@ -58,6 +58,7 @@ Inventārs
     {{-- Moduļa galvenā satura sadaļa --}}
 <div id="inventoryWrapper">
     <div id="inventoryEquip" class="inventoryType">
+        <button id="addEquip" class="w3-button w3-circle addButton">+</button>
         <div id="inv1">
             <p class="name">Kombinzons (rudens)</p>
             <p class="description">Rudens medību kombinzons; izskaties itkā būtu lapu čupa</p>

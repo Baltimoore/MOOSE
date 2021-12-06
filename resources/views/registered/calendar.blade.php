@@ -16,15 +16,7 @@
     align-items: center;
     margin-bottom: 20px;
 }
-    #calendarController button {
-        font-weight: bold;
-        background-color: var(--logo-outline);
-        color: var(--logo-bone-light);
-    }
-    #calendarController button:hover {
-        background-color: var(--logo-fur-dark)!important;
-        color: var(--logo-bone-light)!important;
-    }
+    #calendarController button { padding:8px 15px; }
 
 #calendarContent {
     border: 1px solid var(--logo-fur-dark);
@@ -92,11 +84,7 @@ div.day > div.date.hunt {
 .date > .w3-dropdown-content > b.huntNone { grid-column: 1 / 3 }
 .date > .w3-dropdown-content > a.w3-button {
     grid-column: 1 / 3;
-    padding: 10px;
     margin-top: 5px;
-    font-weight: bold;
-    color: var(--logo-bone-light);
-    background-color: var(--logo-outline);
 }
 @endsection
 
