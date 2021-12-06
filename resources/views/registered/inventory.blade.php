@@ -25,8 +25,8 @@
     }
     .inventoryType > div:last-child { border: 0; }
 
-.inventoryType > div > .name { font-weight: bold; }
-.inventoryType > div > .amount { font-style: italic; }
+.inventoryType > div > .invName { font-weight: bold; }
+.inventoryType > div > .invAmount { font-style: italic; }
 
 .empty { display: none!important; }
 
@@ -69,28 +69,28 @@ Inventārs
     <div id="inventoryEquip" class="inventoryType">
         <button id="addEquip" class="w3-button w3-circle addButton">+</button>
         <div id="inv1">
-            <p class="name">Kombinzons (rudens)</p>
+            <p class="invName">Kombinzons (rudens)</p>
             <p class="description">Rudens medību kombinzons; izskaties itkā būtu lapu čupa</p>
-            <p class="amount">5 gab.</p>
+            <p class="invAmount">5 gab.</p>
         </div>
     </div>
 
     <div id="inventoryTech" class="inventoryType">
         <button id="addTech" class="w3-button w3-circle addButton">+</button>
         <div id="inv4">
-            <p class="name">Piekabe (skārda)</p>
+            <p class="invName">Piekabe (skārda)</p>
             <p class="description">Tā prastā piekabe bez jumta kur samest liekos štruntus kurus nav bail atstāt brīvā gaisā</p>
-            <p class="amount">1 gab.</p>
+            <p class="invAmount">1 gab.</p>
         </div>
         <div id="inv5">
-            <p class="name">Piekabe (sarkanā)</p>
+            <p class="invName">Piekabe (sarkanā)</p>
             <p class="description">Piekabe ar jumtu, kur parasti liekam uzšķērstos dzīvniekus no medībām</p>
-            <p class="amount">1 gab.</p>
+            <p class="invAmount">1 gab.</p>
         </div>
         <div id="inv6">
-            <p class="name">Saldētava</p>
+            <p class="invName">Saldētava</p>
             <p class="description">Guļamkastes ko Dāvids paķēra pa lēto izsolē; paturam tajā pārdodamos gaļas gabalus</p>
-            <p class="amount">3 gab.</p>
+            <p class="invAmount">3 gab.</p>
         </div>
     </div>
     
@@ -98,52 +98,52 @@ Inventārs
         <button id="addGame" class="w3-button w3-circle addButton"
         onclick="document.getElementById('inventoryAdd').style.display='block'">+</button>
         <div id="inv7">
-            <p class="name">Brieža ciska</p>
+            <p class="invName">Brieža ciska</p>
             <p class="description">Brieža ciska kas brieža ciska</p>
-            <p class="amount">8 gab.</p>
+            <p class="invAmount">8 gab.</p>
         </div>
         <div id="inv8">
-            <p class="name">Zaķa āda</p>
+            <p class="invName">Zaķa āda</p>
             <p class="description">Nodīrāta zaķa āda. Apstrādāta tikai tik tālu ka visa gaļa no tās nokasīta. Nekādu caurumu nav.</p>
-            <p class="amount">1 gab.</p>
+            <p class="invAmount">1 gab.</p>
         </div>
         <div id="inv9">
-            <p class="name">Stirnas plauša</p>
+            <p class="invName">Stirnas plauša</p>
             <p class="description">Nav tas smukākais gadījums, bet nav nekādas ložu driskas, tā kādroši var cept pankūku.</p>
-            <p class="amount">2 gab.</p>
+            <p class="invAmount">2 gab.</p>
         </div>
     </div>
 
     <div id="inventoryBones" class="inventoryType">
         <button id="addBones" class="w3-button w3-circle addButton">+</button>
         <div id="inv10">
-            <p class="name">Brieža ragi</p>
+            <p class="invName">Brieža ragi</p>
             <p class="description">3 gadus veca buka nomestie ragi ko atradām mežā. Galvaskausa šiem līdzi nebūs</p>
-            <p class="amount">1 pāris</p>
+            <p class="invAmount">1 pāris</p>
         </div>
         <div id="inv11">
-            <p class="name">Mežacūkas kāja (ar spalvu)</p>
+            <p class="invName">Mežacūkas kāja (ar spalvu)</p>
             <p class="description">Laba lieta ko dot savam suņam grauzt. Sīkas gaļas driskas varbūt pie šīm ir palikušās.</p>
-            <p class="amount">3 gab.</p>
+            <p class="invAmount">3 gab.</p>
         </div>
     </div>
 
     <div id="inventoryOther" class="inventoryType empty">
         <button id="addOther" class="w3-button w3-circle addButton">+</button>
         <div id="inv13">
-            <p class="name"></p>
+            <p class="invName"></p>
             <p class="description"></p>
-            <p class="amount"></p>
+            <p class="invAmount"></p>
         </div>
         <div id="inv14">
-            <p class="name"></p>
+            <p class="invName"></p>
             <p class="description"></p>
-            <p class="amount"></p>
+            <p class="invAmount"></p>
         </div>
         <div id="inv15">
-            <p class="name"></p>
+            <p class="invName"></p>
             <p class="description"></p>
-            <p class="amount"></p>
+            <p class="invAmount"></p>
         </div>
     </div>
 
