@@ -53,10 +53,15 @@ Route::get('/inventory', function() {
 }) -> name('inventory');
 
 
-//profila skats, kas attēlo lietotāja informāciju; līdzīgi kā CSDD
+//profila skats, kas attēlo lietotāja informāciju; izskatās līdzīgi kā CSDD
 Route::get('/profile', function() {
     return view('registered.profile');
 }) -> name('profile');
+
+//profila skats, kas ļauj labot lietotāja informāciju
+Route::get('/profile-edit', function() {
+    return view('registered.profile-edit');
+}) -> name('profile-edit');
 
 //profilu saraksts, kas attēlo visus biedrībā reģistrētos dalībniekus
 Route::get('/profile-all', function() {
