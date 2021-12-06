@@ -25,12 +25,8 @@
     }
     .inventoryType > div:last-child { border: 0; }
 
-.inventoryType > div > .name {
-    font-weight: bold;
-}
-.inventoryType > div > .amount {
-font-style: italic;
-}
+.inventoryType > div > .name { font-weight: bold; }
+.inventoryType > div > .amount { font-style: italic; }
 
 .empty { display: none!important; }
 

@@ -36,10 +36,16 @@ Route::get('/calendar', function() {
     return view('registered.calendar');
 }) -> name('calendar');
 
+
 //kartes skats, kas ievietotā logā attēlo medību teritoriju rajonus. pašlaik tikai fotka
 Route::get('/map', function() {
     return view('registered.map');
 }) -> name('map');
+
+//inventāra labošanas skats, kur visi ekipējuma dati ir modificējami
+Route::get('/inventory-edit', function() {
+    return view('registered.inventory-edit');
+}) -> name('inventory-edit');
 
 //inventāra skats, kas attēlo visu ekipējumu, kas tieši pieder biedrībai
 Route::get('/inventory', function() {
