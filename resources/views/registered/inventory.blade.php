@@ -55,7 +55,7 @@
 }
 
 /* popup pogas izkārtojums */
-#addConfirm { margin: 0 15px 10px; align:right;}
+#addConfirm { margin: 0 15px 10px; align:right; }
 
 @endsection
 
