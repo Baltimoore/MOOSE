@@ -46,6 +46,7 @@
         <a id="calendar" href="{{ route('calendar') }}" class="w3-bar-item w3-button">Kalendārs</a>
         <a id="map" href="{{ route('map') }}" class="w3-bar-item w3-button">Karte</a>
         <a id="inventory" href="{{ route('inventory') }}" class="w3-bar-item w3-button">Inventārs</a>
+        <a id="recordings" href="{{ route('recordings') }}" class="w3-bar-item w3-button">Ieraksti</a>
         <div class="w3-dropdown-hover w3-right">
             <a id="profile" class="w3-button" href="{{ route('profile') }}">Profils</a>
             <div class="w3-dropdown-content w3-bar-block" style="right:0">

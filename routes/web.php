@@ -53,6 +53,12 @@ Route::get('/inventory', function() {
 }) -> name('inventory');
 
 
+//ierakstu skats, kas attēlo visus datubāzē saglabātos videoierakstus
+Route::get('/recordings', function() {
+    return view('registered.recordings');
+}) -> name('recordings');
+
+
 //profila skats, kas attēlo lietotāja informāciju; izskatās līdzīgi kā CSDD
 Route::get('/profile', function() {
     return view('registered.profile');
