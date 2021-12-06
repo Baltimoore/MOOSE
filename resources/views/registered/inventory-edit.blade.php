@@ -63,8 +63,9 @@ div.edit {
 }
 div.editButtons {}
     div.editButtons > button { padding: 5px 15px; }
-    div.editButtons > .editUpdate { margin-bottom: 5px; }
-    div.editButtons > .editRemove:hover {  }
+    div.editButtons > .editUpdate { margin-bottom: 5px; background-color:orange;color:var(--logo-outline); }
+    div.editButtons > .editRemove { background-color:tomato;color:var(--logo-outline); }
+    div.editButtons > button.editRemove:hover {  }
 
 @endsection
 

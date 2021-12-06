@@ -66,7 +66,8 @@ div.day > div.date {
 
 /* Medību info lietas */
 div.day > div.date.hunt {
-    background-color: firebrick;
+    color: var(--logo-outline);
+    background-color: orange;
 }
 
 .date > .w3-dropdown-content {
@@ -188,7 +189,7 @@ Medību kalendārs
                     <div class="day">
                         <div class="date">11</div>
                     </div>
-                    <div class="day" style="border:2px solid firebrick">
+                    <div class="day" style="border:2px solid orange">
                         <div class="date">12
                         </div>
                     </div>
