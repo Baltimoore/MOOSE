@@ -16,7 +16,12 @@ medību teritorijas
 @endsection
 
 @section('moduleContent')
-    <h1>Ievieto te kkādu fotku; man slinkums meklēt un taisīt tagad</h1>
+    <div id="mapInteractive" style="background-color: var(--logo-fur-dark);border:2px solid var(--logo-outline);margin:10px;height:500px;">
+        <h1>Ievieto te kkādu fotku; man slinkums meklēt un taisīt tagad</h1>
+    </div>
+    <div id="mapInfo" style="background-color: var(--logo-bone-light);border:2px solid var(--logo-outline);margin-top:30px;height:200px;">
+        <p>info par atlasītu teritoriju</p>
+    </div>
 @endsection
 
 @section('moduleScripts')
