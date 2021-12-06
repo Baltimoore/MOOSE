@@ -8,6 +8,7 @@
 @section('moduleStyle')
 
 .inventoryType {
+    position: relative;
     border: 2px solid var(--logo-fur-dark);
     border-radius: 25px;
     margin: 30px 15px;
@@ -48,6 +49,18 @@ font-style: italic;
     #inventoryBones::before { content: 'Kauli'; }
     #inventoryOther::before { content: 'Cits'; }
 
+/* pievienošanas pogas uz līnijām */
+.addButton {
+    position: absolute;
+    font-size: 20pt;
+    top: -21px;
+    right: -20px;
+    padding: 0px 12px;
+}
+
+/* popup pogas izkārtojums */
+#addConfirm { margin: 0 15px 10px; align:right;}
+
 @endsection
 
 @section('moduleTitle')
@@ -67,6 +80,7 @@ Inventārs
     </div>
 
     <div id="inventoryTech" class="inventoryType">
+        <button id="addTech" class="w3-button w3-circle addButton">+</button>
         <div id="inv4">
             <p class="name">Piekabe (skārda)</p>
             <p class="description">Tā prastā piekabe bez jumta kur samest liekos štruntus kurus nav bail atstāt brīvā gaisā</p>
@@ -85,6 +99,8 @@ Inventārs
     </div>
     
     <div id="inventoryGame" class="inventoryType">
+        <button id="addGame" class="w3-button w3-circle addButton"
+        onclick="document.getElementById('inventoryAdd').style.display='block'">+</button>
         <div id="inv7">
             <p class="name">Brieža ciska</p>
             <p class="description">Brieža ciska kas brieža ciska</p>
@@ -103,6 +119,7 @@ Inventārs
     </div>
 
     <div id="inventoryBones" class="inventoryType">
+        <button id="addBones" class="w3-button w3-circle addButton">+</button>
         <div id="inv10">
             <p class="name">Brieža ragi</p>
             <p class="description">3 gadus veca buka nomestie ragi ko atradām mežā. Galvaskausa šiem līdzi nebūs</p>
@@ -116,6 +133,7 @@ Inventārs
     </div>
 
     <div id="inventoryOther" class="inventoryType empty">
+        <button id="addOther" class="w3-button w3-circle addButton">+</button>
         <div id="inv13">
             <p class="name"></p>
             <p class="description"></p>
@@ -133,10 +151,54 @@ Inventārs
         </div>
     </div>
 
+    <!-- Medījuma pievienošanas logs -->
+    <div id="inventoryAdd" class="w3-modal">
+        <div class="w3-modal-content w3-card-4">
+            <header class="w3-container">
+                <span onclick="document.getElementById('inventoryAdd').style.display='none'"
+                      class="w3-button w3-circle addButton w3-display-topright">&times;</span>
+                <h2 id="addWhat">Pievienot medījumu</h2>
+            </header>
+            <div class="w3-container">
+                <div class="w3-row-padding">
+                    <div class="w3-col m7 l9">
+                        <label>Inventāra nosaukums</label>
+                        <input id="addName" class="w3-input w3-round-large" type="text"
+                               value="Meža cūkas ribas">
+                    </div>
+                    <div class="w3-col m3 l2">
+                        <label>Daudzums</label>
+                        <input id="addAmount" class="w3-input w3-round-large" type="number"
+                               value="15">
+                    </div>
+                    <div class="w3-col m2 l1">
+                        <label>Mērs</label>
+                        <select id="addMeasure" class="w3-select w3-round-large" name="option">
+                            <option value="" disabled selected>Mērs</option>
+                            <option value="gab">gab.</option>
+                            <option value="kg">kg</option>
+                            <option value="l">l</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="w3-row-padding">
+                    <div class="w3-col">
+                        <label>Inventāra apraksts</label>
+                        <textarea id="addDescription" class="w3-input w3-round-large" style="resize:none">Viena vai divas var būt lauztas</textarea>
+                    </div>
+                </div>
+                
+                    <a id="addConfirm" class="w3-button w3-round-large" href="#">Pievienot jaunu inventāru</a>
+            </div>
+            <footer class="w3-container">
+                <p>Palīgteksts atrodas šeit</p>
+            </footer>
+        </div>
+    </div>
 </div>
 @endsection
 
 @section('moduleScripts')
-    {{-- Uz doto brīdi būs tikai redirecti starp mājaslapām;
-        nekāda papildus funkcionalitāte maketam nav plānota --}}
+    // Inventāra pievienošanas popups (tikai medījumam pieslēgts)
+    var modal = document.getElementById('inventoryAdd');
 @endsection

@@ -26,3 +26,11 @@ body {
     background-color: var(--logo-bone-dark)!important;
     font-weight: bold;
 }
+
+/* popupu izskats */
+.w3-modal-content > header, .w3-modal-content > footer{
+    color: var(--logo-bone-light);
+    background-color: var(--logo-outline);
+}
+.w3-row-padding { margin: 10px 0; }
+input, textarea, select { background-color: var(--logo-bone-light); }
