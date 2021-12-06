@@ -86,6 +86,20 @@ div.day > div.date.hunt {
     grid-column: 1 / 3;
     margin-top: 5px;
 }
+
+/* notikumu popup izskata definīcijas */
+#calendarCUD > div > header > span {
+    position: absolute;
+    font-size: 20pt;
+    top: -21px;
+    right: -20px;
+    padding: 0px 12px;
+}
+#cudDate {
+    padding-left:10px;
+    content-align:centre;
+}
+#cudConfirm { margin: 0 15px 10px; }
 @endsection
 
 @section('moduleTitle')
@@ -97,9 +111,9 @@ Medību kalendārs
     
     <div id="calendarWrapper">
         <div id="calendarController">
-            <button id="mPrevious" class="w3-button w3-circle"><</button> <!-- Nomaina datumus uz iepriekšējo mēnesi -->
+            <button id="mPrevious" class="w3-button w3-circle"><</button> <!-- Domāts nomainīt datumus uz iepriekšējo mēnesi -->
             <h1 id="M-Y">Maijs 2022</h1>
-            <button id="mFollowing" class="w3-button w3-circle">></button> <!-- Nomaina datumus uz nākamo mēnesi -->
+            <button id="mFollowing" class="w3-button w3-circle">></button> <!-- Domāts nomainīt datumus uz nākamo mēnesi -->
         </div>
         <div id="calendarContent">
             <div id="calendarWeekdays">
@@ -194,7 +208,8 @@ Medību kalendārs
                             <div class="w3-dropdown-content w3-round-large">
                                 <label>Datums:</label> <b id="huntDate">16. maijs</b>
                                 <b class="huntNone">Datumā nav reģistrētu notikumu</b>
-                                <a class="w3-button w3-round-large" href="{{-- route('eventCUD') --}}">Reģistrēt notikumu</a>
+                                <a class="w3-button w3-round-large" 
+                                   onclick="document.getElementById('calendarCUD').style.display='block'">Reģistrēt notikumu</a>
                             </div>
                         </div>
                     </div>
@@ -278,6 +293,60 @@ Medību kalendārs
                         <div class="date">5</div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Notikuma reģistrēšanas/modificēšanas logs -->
+        <div id="calendarCUD" class="w3-modal">
+            <div class="w3-modal-content w3-card-4">
+                <header class="w3-container">
+                    <span onclick="document.getElementById('calendarCUD').style.display='none'"
+                        class="w3-button w3-circle addButton w3-display-topright">&times;</span>
+                    <h2 id="cudWhat">Pievienot notikumu</h2>
+                </header>
+                <div class="w3-container">
+                    <div class="w3-row-padding">
+                        <div class="w3-col m6 l4">
+                            <label>Medību tips</label>
+                            <select id="cudType" class="w3-select w3-round-large">
+                                <option hidden disabled selected>Atlasiet tipu</option>
+                                <option value="run">Dzinējmedības</option>
+                                <option value="gun">Medības</option>
+                            </select>
+                            <label>Medību vadītājs</label>
+                            <select id="cudLead" class="w3-select w3-round-large">
+                                <option hidden disabled selected>Atlasiet vadītāju</option>
+                                <option value="gun">Juris Padels</option>
+                                <option value="run">Miķelis Zindars</option>
+                            </select>
+                        </div>
+                        <div class="w3-col m6 l4">
+                            <label>Medību norises datums</label>
+                            <input id="cudDate" type="date" class="w3-select w3-round-large">
+                        </div>
+                    </div>
+                    <hr><div class="w3-row-padding">
+                        <div class="w3-col m12 l5">
+                            <label>Medību vieta</label>
+                            <select id="cudArea" class="w3-select w3-round-large">
+                                <option hidden disabled selected>Atlasiet rajonu</option>
+                                <option value="run">Mežs "Zemzariņi"</option>
+                                <option value="gun">Mežs "Klubiņi"</option>
+                            </select>
+                            <div id="cudMap" style="background-color: var(--logo-fur-dark);height:250px;margin:10px;border:2px solid var(--logo-outline)"></div>
+                        </div>
+                        <div class="w3-col m12 l7">
+                            <label>Sapulcēšanās vietas apraksts</label>
+                            <textarea id="cudDesc" class="w3-input w3-round-large"
+                                style="resize:none">Ziemeļu pusē pie gandrīz aizaugušā ugunskura</textarea>
+                        </div>
+                    </div>
+        
+                    <a id="cudConfirm" class="w3-button w3-round-large" href="#">Reģistrēt jaunu notikumu</a>
+                </div>
+                <footer class="w3-container">
+                    <p>Palīgteksts atrodas šeit</p>
+                </footer>
             </div>
         </div>
     </div>
