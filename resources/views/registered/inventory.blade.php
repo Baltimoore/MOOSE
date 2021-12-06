@@ -70,7 +70,7 @@ Inventārs
         <button id="addEquip" class="w3-button w3-circle addButton">+</button>
         <div id="inv1">
             <p class="invName">Kombinzons (rudens)</p>
-            <p class="description">Rudens medību kombinzons; izskaties itkā būtu lapu čupa</p>
+            <p class="invDescription">Rudens medību kombinzons; izskaties itkā būtu lapu čupa</p>
             <p class="invAmount">5 gab.</p>
         </div>
     </div>
@@ -79,17 +79,17 @@ Inventārs
         <button id="addTech" class="w3-button w3-circle addButton">+</button>
         <div id="inv4">
             <p class="invName">Piekabe (skārda)</p>
-            <p class="description">Tā prastā piekabe bez jumta kur samest liekos štruntus kurus nav bail atstāt brīvā gaisā</p>
+            <p class="invDescription">Tā prastā piekabe bez jumta kur samest liekos štruntus kurus nav bail atstāt brīvā gaisā</p>
             <p class="invAmount">1 gab.</p>
         </div>
         <div id="inv5">
             <p class="invName">Piekabe (sarkanā)</p>
-            <p class="description">Piekabe ar jumtu, kur parasti liekam uzšķērstos dzīvniekus no medībām</p>
+            <p class="invDescription">Piekabe ar jumtu, kur parasti liekam uzšķērstos dzīvniekus no medībām</p>
             <p class="invAmount">1 gab.</p>
         </div>
         <div id="inv6">
             <p class="invName">Saldētava</p>
-            <p class="description">Guļamkastes ko Dāvids paķēra pa lēto izsolē; paturam tajā pārdodamos gaļas gabalus</p>
+            <p class="invDescription">Guļamkastes ko Dāvids paķēra pa lēto izsolē; paturam tajā pārdodamos gaļas gabalus</p>
             <p class="invAmount">3 gab.</p>
         </div>
     </div>
@@ -99,17 +99,17 @@ Inventārs
         onclick="document.getElementById('inventoryAdd').style.display='block'">+</button>
         <div id="inv7">
             <p class="invName">Brieža ciska</p>
-            <p class="description">Brieža ciska kas brieža ciska</p>
+            <p class="invDescription">Brieža ciska kas brieža ciska</p>
             <p class="invAmount">8 gab.</p>
         </div>
         <div id="inv8">
             <p class="invName">Zaķa āda</p>
-            <p class="description">Nodīrāta zaķa āda. Apstrādāta tikai tik tālu ka visa gaļa no tās nokasīta. Nekādu caurumu nav.</p>
+            <p class="invDescription">Nodīrāta zaķa āda. Apstrādāta tikai tik tālu ka visa gaļa no tās nokasīta. Nekādu caurumu nav.</p>
             <p class="invAmount">1 gab.</p>
         </div>
         <div id="inv9">
             <p class="invName">Stirnas plauša</p>
-            <p class="description">Nav tas smukākais gadījums, bet nav nekādas ložu driskas, tā kādroši var cept pankūku.</p>
+            <p class="invDescription">Nav tas smukākais gadījums, bet nav nekādas ložu driskas, tā kādroši var cept pankūku.</p>
             <p class="invAmount">2 gab.</p>
         </div>
     </div>
@@ -118,12 +118,12 @@ Inventārs
         <button id="addBones" class="w3-button w3-circle addButton">+</button>
         <div id="inv10">
             <p class="invName">Brieža ragi</p>
-            <p class="description">3 gadus veca buka nomestie ragi ko atradām mežā. Galvaskausa šiem līdzi nebūs</p>
+            <p class="invDescription">3 gadus veca buka nomestie ragi ko atradām mežā. Galvaskausa šiem līdzi nebūs</p>
             <p class="invAmount">1 pāris</p>
         </div>
         <div id="inv11">
             <p class="invName">Mežacūkas kāja (ar spalvu)</p>
-            <p class="description">Laba lieta ko dot savam suņam grauzt. Sīkas gaļas driskas varbūt pie šīm ir palikušās.</p>
+            <p class="invDescription">Laba lieta ko dot savam suņam grauzt. Sīkas gaļas driskas varbūt pie šīm ir palikušās.</p>
             <p class="invAmount">3 gab.</p>
         </div>
     </div>
@@ -132,17 +132,17 @@ Inventārs
         <button id="addOther" class="w3-button w3-circle addButton">+</button>
         <div id="inv13">
             <p class="invName"></p>
-            <p class="description"></p>
+            <p class="invDescription"></p>
             <p class="invAmount"></p>
         </div>
         <div id="inv14">
             <p class="invName"></p>
-            <p class="description"></p>
+            <p class="invDescription"></p>
             <p class="invAmount"></p>
         </div>
         <div id="inv15">
             <p class="invName"></p>
-            <p class="description"></p>
+            <p class="invDescription"></p>
             <p class="invAmount"></p>
         </div>
     </div>
