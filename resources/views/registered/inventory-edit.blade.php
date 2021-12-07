@@ -66,8 +66,9 @@ div.editButtons {}
     div.editButtons > button:first-child { margin-bottom: 5px; }
     div.editButtons > .editUpdate {  }
     div.editButtons > .editConfirm { background-color:orange;color:var(--logo-outline); padding: 5px 12px; }
-    div.editButtons > .editRemove, div.editButtons > .editCancel { background-color:tomato;color:var(--logo-outline); }
-    div.editButtons > .editRemove:hover {  }
+    div.editButtons > .editRemove, div.editButtons > .editCancel { color:var(--logo-outline); }
+    div.editButtons > .editRemove { background-color:tomato; }
+    div.editButtons > .editCancel { background-color: var(--logo-fur-light); }
 
 @endsection
 
