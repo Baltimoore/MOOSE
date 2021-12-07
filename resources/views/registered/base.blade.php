@@ -20,12 +20,14 @@
         max-width: 100px;
     }
 #navbar a.w3-button {
-    min-width:120px;
+    min-width:100px;
     width: 8vw;
     max-width:200px;
+    padding: 8px 0;
 }
-    #navbar > div.w3-dropdown-hover { margin: -2px 0; }
-    #navbar > div.w3-dropdown-hover > .w3-dropdown-content { min-width:0; margin-top:-2px}
+    #navbar > div.w3-dropdown-hover {  }
+    #navbar > div.w3-dropdown-hover > .w3-dropdown-content { min-width:0; }
+    #navbar > div.w3-dropdown-hover > .w3-dropdown-content > a { padding-left: 10px; }
     @yield('moduleStyle')
 @endsection
 
