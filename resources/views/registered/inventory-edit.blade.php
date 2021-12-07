@@ -63,9 +63,11 @@ div.edit {
 }
 div.editButtons {}
     div.editButtons > button { padding: 5px 15px; }
-    div.editButtons > .editUpdate { margin-bottom: 5px; background-color:orange;color:var(--logo-outline); }
-    div.editButtons > .editRemove { background-color:tomato;color:var(--logo-outline); }
-    div.editButtons > button.editRemove:hover {  }
+    div.editButtons > button:first-child { margin-bottom: 5px; }
+    div.editButtons > .editUpdate {  }
+    div.editButtons > .editConfirm { background-color:orange;color:var(--logo-outline); padding: 5px 12px; }
+    div.editButtons > .editRemove, div.editButtons > .editCancel { background-color:tomato;color:var(--logo-outline); }
+    div.editButtons > .editRemove:hover {  }
 
 @endsection
 
@@ -81,7 +83,10 @@ Inventāra labošana
             <p class="invName">Kombinzons (rudens)</p>
             <p class="invDescription">Rudens medību kombinzons; izskaties itkā būtu lapu čupa</p>
             <p class="invAmount">5 gab.</p>
-            <div class="edit w3-button w3-round-large">Labot</div>
+            <div class="editButtons">
+                <button class="editUpdate w3-button w3-round-large">Labot</button>
+                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+            </div>
         </div>
     </div>
 
@@ -91,23 +96,26 @@ Inventāra labošana
             <textarea class="invDescription w3-input w3-round-large" type="text">Tā prastā piekabe bez jumta kur samest liekos štruntus</textarea>
             <input class="invAmount w3-input w3-round-large" type="number" value="1">
             <div class="editButtons">
-                <button class="editUpdate w3-button w3-round-large">Labot</button>
-                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+                <button class="editConfirm w3-button w3-round-large">Mainīt</button>
+                <button class="editCancel w3-button w3-round-large">Atcelt</button>
             </div>
         </div>
         <div id="inv5">
             <p class="invName">Piekabe (sarkanā)</p>
             <p class="invDescription">Piekabe ar jumtu, kur parasti liekam uzšķērstos dzīvniekus no medībām</p>
             <p class="invAmount">1 gab.</p>
-            <div class="edit w3-button w3-round-large">Labot</div>
+            <div class="editButtons">
+                <button class="editUpdate w3-button w3-round-large">Labot</button>
+                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+            </div>
         </div>
         <div id="inv6">
             <textarea class="invName w3-input w3-round-large" type="text">Saldētava</textarea>
             <textarea class="invDescription w3-input w3-round-large" type="text">Guļamkastes kurās uzturam pārdodamos gaļas gabalus</textarea>
             <input class="invAmount w3-input w3-round-large" type="number" value="3">
             <div class="editButtons">
-                <button class="editUpdate w3-button w3-round-large">Labot</button>
-                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+                <button class="editConfirm w3-button w3-round-large">Mainīt</button>
+                <button class="editCancel w3-button w3-round-large">Atcelt</button>
             </div>
         </div>
     </div>
@@ -117,15 +125,18 @@ Inventāra labošana
             <p class="invName">Brieža ciska</p>
             <p class="invDescription">Brieža ciska kas brieža ciska</p>
             <p class="invAmount">8 gab.</p>
-            <div class="edit w3-button w3-round-large">Labot</div>
+            <div class="editButtons">
+                <button class="editUpdate w3-button w3-round-large">Labot</button>
+                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+            </div>
         </div>
         <div id="inv8">
             <textarea class="invName w3-input w3-round-large" type="text">Zaķa āda</textarea>
             <textarea class="invDescription w3-input w3-round-large" type="text">Nodīrāta zaķa āda. Nekādu caurumu nav.</textarea>
             <input class="invAmount w3-input w3-round-large" type="number" value="1">
             <div class="editButtons">
-                <button class="editUpdate w3-button w3-round-large">Labot</button>
-                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+                <button class="editConfirm w3-button w3-round-large">Mainīt</button>
+                <button class="editCancel w3-button w3-round-large">Atcelt</button>
             </div>
         </div>
         <div id="inv9">
@@ -133,15 +144,18 @@ Inventāra labošana
             <textarea class="invDescription w3-input w3-round-large" type="text">Nav glīts gabals, bet ir ēdams.</textarea>
             <input class="invAmount w3-input w3-round-large" type="number" value="2">
             <div class="editButtons">
-                <button class="editUpdate w3-button w3-round-large">Labot</button>
-                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+                <button class="editConfirm w3-button w3-round-large">Mainīt</button>
+                <button class="editCancel w3-button w3-round-large">Atcelt</button>
             </div>
         </div>
         <div id="invx">
             <div class="invName">Meža cūkas ribas</div>
             <div class="invDescription">Viena vai divas var būt lauztas</div>
             <div class="invAmount">15 gab</div>
-            <div class="edit w3-button w3-round-large">Labot</div>
+            <div class="editButtons">
+                <button class="editUpdate w3-button w3-round-large">Labot</button>
+                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+            </div>
         </div>
     </div>
 
@@ -151,8 +165,8 @@ Inventāra labošana
             <textarea class="invDescription w3-input w3-round-large" type="text">3 gadus veca buka nomestie ragi. Galvaskausa nav.</textarea>
             <input class="invAmount w3-input w3-round-large" type="number" value="1">
             <div class="editButtons">
-                <button class="editUpdate w3-button w3-round-large">Labot</button>
-                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+                <button class="editConfirm w3-button w3-round-large">Mainīt</button>
+                <button class="editCancel w3-button w3-round-large">Atcelt</button>
             </div>
         </div>
         <div id="inv11">
@@ -160,8 +174,8 @@ Inventāra labošana
             <textarea class="invDescription w3-input w3-round-large" type="text">Laba suņa graužammanta.</textarea>
             <input class="invAmount w3-input w3-round-large" type="number" value="3">
             <div class="editButtons">
-                <button class="editUpdate w3-button w3-round-large">Labot</button>
-                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+                <button class="editConfirm w3-button w3-round-large">Mainīt</button>
+                <button class="editCancel w3-button w3-round-large">Atcelt</button>
             </div>
         </div>
     </div>
