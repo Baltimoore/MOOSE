@@ -49,7 +49,7 @@ div#userHead {
             font-size: 16px;
             font-style: italic;
         }
-    #userEdit {
+    #userReplaceImg {
         border-top: 1px dashed var(--logo-fur-light);
         grid-column: 2;
         grid-row: 2;
@@ -107,13 +107,25 @@ div#userHead {
         width:180px;
         height:30px;
     }
-    #userEdit { margin-left: 10px; }
+    #userReplaceImg { margin-left: 10px; }
 
 #userPassport > div > input.edit, #userHunting > div > input.edit {
     height: 30px;
     width: 150px;
     margin-top: 11px;
 }
+
+#userEdit {
+    padding-top: 15px;
+    display: grid;
+    justify-content: space-around;
+    align-content: center;
+}
+    #userConfirm, #userCancel {
+        grid-column: 1/3;
+        width:90%;
+        margin-bottom: 15px;
+    }
 @endsection
 
 @section('moduleTitle')
@@ -126,7 +138,7 @@ Profils
     <div id="userHead">
         <div id="userImage"><img src="/images/logo.svg" alt="Lietotāja profila attēls"></div>
         <div id="userID">
-            <input id="userName" class="edit w3-input w3-round-large" type="text" value="Alnis Mūsis">
+            <input id="userName" class="edit w3-input w3-round-large" type="text" value="Alnis Mousis">
             <select id="userRole" class="edit w3-select w3-round-large" name="option">
                 <option disabled selected hidden>Biedra loma</option>
                 <option value="Vad">Biedrības vadītājs</option>
@@ -135,7 +147,7 @@ Profils
                 <option value="Dzi">Dzinējs</option>
             </select>
         </div>
-        <a id="userEdit" href="#">Mainīt attēlu</a>
+        <a id="userReplaceImg" href="#">Mainīt attēlu</a>
     </div>
     <div id="userBody">
         <div id="userPassport">
@@ -157,6 +169,10 @@ Profils
                 <p>Medību licenses nr:</p>
                 <input id="addName" class="edit w3-input w3-round-large" type="text" value="am15971">
             </div>
+        </div>
+        <div id="userEdit">
+            <button id="userConfirm" class="w3-button w3-round-large" style="background-color:orange; color:var(--logo-outline);">Labot biedrības dalībnieka datus</button>
+            <button id="userCancel" class="w3-button w3-round-large">Atcelt datu labošanu</button>
         </div>
     </div>
 </div>
