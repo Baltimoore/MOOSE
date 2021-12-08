@@ -100,7 +100,16 @@ div.day > div.date.hunt {
     padding-left:10px;
     content-align:centre;
 }
-#cudConfirm { margin: 0 15px 10px; }
+
+#cudButtons { margin: 0 33px 20px; }
+    #cudConfirm { width: 250px; }
+    #cudEdit, #cudDelete {
+        display: none;
+        width: 180px;
+        color: var(--logo-outline);
+    }
+    #cudEdit { background-color:orange; }
+    #cudDelete { background-color: tomato; }
 @endsection
 
 @section('moduleTitle')
@@ -305,7 +314,7 @@ Medību kalendārs
                         class="w3-button w3-circle addButton w3-display-topright">&times;</span>
                     <h2 id="cudWhat">Pievienot notikumu</h2>
                 </header>
-                <div class="w3-container">
+                <div id="cudInfo" class="w3-container">
                     <div class="w3-row-padding">
                         <div class="w3-col m6 l4">
                             <label>Medību tips</label>
@@ -317,16 +326,16 @@ Medību kalendārs
                             <label>Medību vadītājs</label>
                             <select id="cudLead" class="w3-select w3-round-large">
                                 <option hidden disabled selected>Atlasiet vadītāju</option>
-                                <option value="gun">Juris Padels</option>
-                                <option value="run">Miķelis Zindars</option>
+                                <option value="jp45987">Juris Padels</option>
+                                <option value="mz12375">Miķelis Zindars</option>
                             </select>
                         </div>
                         <div class="w3-col m6 l4">
                             <label>Medību norises datums</label>
                             <input id="cudDate" type="date" class="w3-select w3-round-large">
                         </div>
-                    </div>
-                    <hr><div class="w3-row-padding">
+                    </div><hr>
+                    <div class="w3-row-padding">
                         <div class="w3-col m12 l5">
                             <label>Medību vieta</label>
                             <select id="cudArea" class="w3-select w3-round-large">
@@ -338,13 +347,15 @@ Medību kalendārs
                         </div>
                         <div class="w3-col m12 l7">
                             <label>Sapulcēšanās vietas apraksts</label>
-                            <textarea id="cudDesc" class="w3-input w3-round-large"
-                                style="resize:none">Ziemeļu pusē pie gandrīz aizaugušā ugunskura</textarea>
+                            <textarea id="cudDesc" class="w3-input w3-round-large" style="resize:none" maxlength="500" placeholder="Aprakstiet vietu, kur medību dalībniekiem pulcēties">Ziemeļu pusē pie gandrīz aizaugušā ugunskura</textarea>
                         </div>
                     </div>
-        
-                    <a id="cudConfirm" class="w3-button w3-round-large" href="#">Reģistrēt jaunu notikumu</a>
                 </div>
+                <div id="cudButtons">
+                    <a id="cudConfirm" class="w3-button w3-round-large" href="#">Reģistrēt jaunu notikumu</a>
+                    <a id="cudEdit" class="w3-button w3-round-large" href="#">Labot notikumu</a>
+                    <a id="cudDelete" class="w3-button w3-round-large" href="#">Dzēst notikumu</a>
+                </div>                
                 <footer class="w3-container">
                     <p>Palīgteksts atrodas šeit</p>
                 </footer>
