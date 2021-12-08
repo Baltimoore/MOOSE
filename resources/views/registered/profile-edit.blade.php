@@ -55,9 +55,7 @@ div#userHead {
         grid-row: 2;
     }
 
-#userBody {
-    background-color: var(--logo-bone-light);
-}
+#userBody { background-color: var(--logo-bone-light); }
 #userBody > div {
     border-bottom: 2px dotted var(--logo-fur-dark);
 }
@@ -121,11 +119,12 @@ div#userHead {
     justify-content: space-around;
     align-content: center;
 }
-    #userConfirm, #userCancel {
+    #userEdit > a {
         grid-column: 1/3;
         width:90%;
         margin-bottom: 15px;
     }
+    #userCreate{ display:none; }
     #userConfirm {
         background-color: orange;
         color: var(--logo-outline);
@@ -142,7 +141,7 @@ Profils
     <div id="userHead">
         <div id="userImage"><img src="/images/logo.svg" alt="Lietotāja profila attēls"></div>
         <div id="userID">
-            <input id="userName" class="edit w3-input w3-round-large" type="text" value="Alnis Mousis">
+            <input id="userName" class="edit w3-input w3-round-large" type="text" placeholder="Biedra vārds" value="Alnis Mousis">
             <select id="userRole" class="edit w3-select w3-round-large" name="option">
                 <option disabled selected hidden>Biedra loma</option>
                 <option value="Vad">Biedrības vadītājs</option>
@@ -157,24 +156,26 @@ Profils
         <div id="userPassport">
             <div id="userBirthDate" class="userData">
                 <p>Personas kods:</p>
-                <input id="addName" class="edit w3-input w3-round-large" type="text" value="04121974-59734">
+                <input id="addName" class="edit w3-input w3-round-large" type="text" pattern="[0-9]{6}-[0-9]{5}" placeholder="123456-12345" value="041274-59734" >
+                
             </div>
             <div id="userPhone" class="userData">
                 <p>Telefona numurs:</p>
-                <input id="addName" class="edit w3-input w3-round-large" type="text" value="16872687">
+                <input id="addName" class="edit w3-input w3-round-large" type="tel" pattern="[0-9]{8}" placeholder="12345678" value="16872687">
             </div>
         </div>
         <div id="userHunting">
             <div id="userLicenseExists" class="userData">
                 <p>Ir medību license?</p>
-                <p>Jā <input class="w3-check" type="checkbox" checked="checked"> Nē <input class="w3-check" type="checkbox"></p>
+                <p>Jā <input id="licenseYes" class="w3-check" type="checkbox" checked="checked"> Nē <input id="licenseNo" class="w3-check" type="checkbox"></p>
             </div>
             <div id="userLicenseNr" class="userData">
                 <p>Medību licenses nr:</p>
-                <input id="addName" class="edit w3-input w3-round-large" type="text" value="am15971">
+                <input id="addName" class="edit w3-input w3-round-large" type="text" pattern="[a-z]{2}-[0-9]{5}" placeholder="aa12345" value="am15971">
             </div>
         </div>
         <div id="userEdit">
+            <a id="userCreate" class="w3-button w3-round-large" href="{{ route('profile') }}">Izveidot lietotāju</a>
             <a id="userConfirm" class="w3-button w3-round-large" href="{{ route('profile') }}">Labot biedrības dalībnieka datus</a>
             <a id="userCancel" class="w3-button w3-round-large" href="{{ route('profile') }}">Atcelt datu labošanu</a>
         </div>
