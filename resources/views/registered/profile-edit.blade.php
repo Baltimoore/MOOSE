@@ -126,6 +126,10 @@ div#userHead {
         width:90%;
         margin-bottom: 15px;
     }
+    #userConfirm {
+        background-color: orange;
+        color: var(--logo-outline);
+    }
 @endsection
 
 @section('moduleTitle')
@@ -171,8 +175,8 @@ Profils
             </div>
         </div>
         <div id="userEdit">
-            <button id="userConfirm" class="w3-button w3-round-large" style="background-color:orange; color:var(--logo-outline);">Labot biedrības dalībnieka datus</button>
-            <button id="userCancel" class="w3-button w3-round-large">Atcelt datu labošanu</button>
+            <button id="userConfirm" class="w3-button w3-round-large" href="{{ route('profile') }}">Labot biedrības dalībnieka datus</button>
+            <button id="userCancel" class="w3-button w3-round-large" href="{{ route('profile') }}">Atcelt datu labošanu</button>
         </div>
     </div>
 </div>
