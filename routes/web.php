@@ -25,12 +25,6 @@ Route::get('/', function() {
 }) -> name('login');
 
 
-//centrālais skats, no kura iespējams pāriet uz visiem pārējiem
-Route::get('/home', function() {
-    return view('registered.home');
-}) -> name('home');
-
-
 //kalendāra skats, kas digitālā kalendārā attēlo plānotās un bijušās medības
 Route::get('/calendar', function() {
     return view('registered.calendar');
