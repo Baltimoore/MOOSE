@@ -175,8 +175,8 @@ Profils
             </div>
         </div>
         <div id="userEdit">
-            <button id="userConfirm" class="w3-button w3-round-large" href="{{ route('profile') }}">Labot biedrības dalībnieka datus</button>
-            <button id="userCancel" class="w3-button w3-round-large" href="{{ route('profile') }}">Atcelt datu labošanu</button>
+            <a id="userConfirm" class="w3-button w3-round-large" href="{{ route('profile') }}">Labot biedrības dalībnieka datus</a>
+            <a id="userCancel" class="w3-button w3-round-large" href="{{ route('profile') }}">Atcelt datu labošanu</a>
         </div>
     </div>
 </div>
