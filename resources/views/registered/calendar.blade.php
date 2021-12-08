@@ -318,13 +318,13 @@ Medību kalendārs
                     <div class="w3-row-padding">
                         <div class="w3-col m6 l4">
                             <label>Medību tips</label>
-                            <select id="cudType" class="w3-select w3-round-large">
+                            <select id="cudType" class="w3-select w3-round-large" required>
                                 <option hidden disabled selected>Atlasiet tipu</option>
                                 <option value="run">Dzinējmedības</option>
                                 <option value="gun">Medības</option>
                             </select>
                             <label>Medību vadītājs</label>
-                            <select id="cudLead" class="w3-select w3-round-large">
+                            <select id="cudLead" class="w3-select w3-round-large" required>
                                 <option hidden disabled selected>Atlasiet vadītāju</option>
                                 <option value="jp45987">Juris Padels</option>
                                 <option value="mz12375">Miķelis Zindars</option>
@@ -332,13 +332,13 @@ Medību kalendārs
                         </div>
                         <div class="w3-col m6 l4">
                             <label>Medību norises datums</label>
-                            <input id="cudDate" type="date" class="w3-select w3-round-large">
+                            <input id="cudDate" type="date" class="w3-select w3-round-large" required>
                         </div>
                     </div><hr>
                     <div class="w3-row-padding">
                         <div class="w3-col m12 l5">
                             <label>Medību vieta</label>
-                            <select id="cudArea" class="w3-select w3-round-large">
+                            <select id="cudArea" class="w3-select w3-round-large" required>
                                 <option hidden disabled selected>Atlasiet rajonu</option>
                                 <option value="run">Mežs "Zemzariņi"</option>
                                 <option value="gun">Mežs "Klubiņi"</option>

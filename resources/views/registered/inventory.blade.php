@@ -159,17 +159,17 @@ Inventārs
                 <div class="w3-row-padding">
                     <div class="w3-col m7 l9">
                         <label>Inventāra nosaukums</label>
-                        <input id="addName" class="w3-input w3-round-large" type="text"
+                        <input id="addName" class="w3-input w3-round-large" type="text" required
                                value="Meža cūkas ribas">
                     </div>
                     <div class="w3-col m3 l2">
                         <label>Daudzums</label>
-                        <input id="addAmount" class="w3-input w3-round-large" type="number"
+                        <input id="addAmount" class="w3-input w3-round-large" type="number" required
                                value="15">
                     </div>
                     <div class="w3-col m2 l1">
                         <label>Mērs</label>
-                        <select id="addMeasure" class="w3-select w3-round-large" name="option">
+                        <select id="addMeasure" class="w3-select w3-round-large" name="option" required>
                             <option value="" disabled selected>Mērs</option>
                             <option value="gab">gab.</option>
                             <option value="kg">kg</option>

@@ -141,8 +141,8 @@ Profils
     <div id="userHead">
         <div id="userImage"><img src="/images/logo.svg" alt="Lietotāja profila attēls"></div>
         <div id="userID">
-            <input id="userName" class="edit w3-input w3-round-large" type="text" placeholder="Biedra vārds" value="Alnis Mousis">
-            <select id="userRole" class="edit w3-select w3-round-large" name="option">
+            <input id="userName" class="edit w3-input w3-round-large" type="text" placeholder="Biedra vārds" value="Alnis Mousis" required>
+            <select id="userRole" class="edit w3-select w3-round-large" name="option" required>
                 <option disabled selected hidden>Biedra loma</option>
                 <option value="Vad">Biedrības vadītājs</option>
                 <option value="Org">Medību organizators</option>
@@ -156,12 +156,12 @@ Profils
         <div id="userPassport">
             <div id="userBirthDate" class="userData">
                 <p>Personas kods:</p>
-                <input id="addName" class="edit w3-input w3-round-large" type="text" pattern="[0-9]{6}-[0-9]{5}" placeholder="123456-12345" value="041274-59734" >
+                <input id="addName" class="edit w3-input w3-round-large" type="text" pattern="[0-9]{6}-[0-9]{5}" required placeholder="123456-12345" value="041274-59734">
                 
             </div>
             <div id="userPhone" class="userData">
                 <p>Telefona numurs:</p>
-                <input id="addName" class="edit w3-input w3-round-large" type="tel" pattern="[0-9]{8}" placeholder="12345678" value="16872687">
+                <input id="addNum" class="edit w3-input w3-round-large" type="tel" pattern="[0-9]{8}" required placeholder="12345678" value="16872687">
             </div>
         </div>
         <div id="userHunting">
@@ -171,7 +171,7 @@ Profils
             </div>
             <div id="userLicenseNr" class="userData">
                 <p>Medību licenses nr:</p>
-                <input id="addName" class="edit w3-input w3-round-large" type="text" pattern="[a-z]{2}-[0-9]{5}" placeholder="aa12345" value="am15971">
+                <input id="addName" class="edit w3-input w3-round-large" type="text" pattern="[a-z]{2}-[0-9]{5}" required placeholder="aa12345" value="am15971">
             </div>
         </div>
         <div id="userEdit">
