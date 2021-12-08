@@ -33,6 +33,9 @@
     #mapInfo > div > * { display: inline-block; }
     #mapInfo p { line-height:0; }
     #mapInfo > div > label { font-weight: bold; }
+    #mapInfo > #recordingsList {
+        float: right;
+    }
 @endsection
 
 @section('moduleTitle')
@@ -44,12 +47,12 @@ medību teritorijas
         <img src="/images/map.png" alt="">
     </div>
     <div id="mapInfo" style="">
+        <a id="recordingsList" class="w3-button w3-round-large" href="{{ route('recordings') }}">Apskatīt teritorijas ierakstus</a>
         <p id="mapName">Mežs "Zemzariņi"</p>
         <div id="mapArea"><label>Platība:</label> <p>12</p>km&sup2;</div>
         <div id="mapLicense"><label>Medību atļauja sniegta:</label> <a id="licenseOwner">Medību biedrība "Alnis"</a></div>
         <div id="mapLicenseDate"><label>Medību atļaujas termiņš:</label> <p id="licenseDate">2018-2023</p></div>
         <p>papildus teritorijas informācija</p>
-        <div id="recordingsList"></div>
     </div>
 @endsection
 

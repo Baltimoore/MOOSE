@@ -31,7 +31,7 @@ Reģistrācija
             <label for="psw"><b>Parole</b></label>
             <input class="w3-input w3-round-large" type="password" placeholder="Ievadiet paroli" name="psw" required>
             <br>
-            <a class="w3-button w3-round-large" href="{{ route('home') }}"><b>Pieslēgties</b></a>
+            <a class="w3-button w3-round-large" href="{{ route('map') }}"><b>Pieslēgties</b></a>
             <br>
             <label><input class="w3-check" type="checkbox" checked="checked"> Saglabāt lietotājvārdu</label>
         </div>
