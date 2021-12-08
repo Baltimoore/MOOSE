@@ -26,6 +26,10 @@
     padding: 10px;
     height:200px
 }
+    #mapInfo > #recordingsList {
+        float: right;
+        width: 250px;
+    }
     #mapInfo > #mapName {
         font-family: "Montserrat Alternates", sans-serif;
         font-size: 14pt;
@@ -33,9 +37,6 @@
     #mapInfo > div > * { display: inline-block; }
     #mapInfo p { line-height:0; }
     #mapInfo > div > label { font-weight: bold; }
-    #mapInfo > #recordingsList {
-        float: right;
-    }
 @endsection
 
 @section('moduleTitle')
