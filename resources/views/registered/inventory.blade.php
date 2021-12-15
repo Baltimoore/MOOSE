@@ -18,7 +18,7 @@
     .inventoryType > div {
         padding: 0;
         display: grid;
-        grid-template-columns: 150px auto 80px;
+        grid-template-columns: 150px auto 80px 75px;
         align-items: center;
         text-align: center;
         border-bottom: 1px dashed var(--logo-fur-light);
@@ -57,6 +57,32 @@
 /* popup pogas izkārtojums */
 #addConfirm { margin: 0 15px 10px; align:right; }
 
+/* Izliekamies, ka notiktu labošana */
+.inventoryType > div { min-height: 100px; }
+.inventoryType > div > textarea {
+    height: 70px;
+    text-align: center;
+}
+    textarea.invName { resize: none; width: 125px; }
+    textarea.invDescription { resize: vertical; }
+    input.invAmount {
+        height:30px;
+        width: 60px;
+        margin-left:10px;
+    }
+
+div.edit {
+    padding: 20px 0;
+    font-weight:bold;
+}
+div.editButtons {}
+    div.editButtons > button { padding: 5px 15px; }
+    div.editButtons > button:first-child { margin-bottom: 5px; }
+    div.editButtons > .editUpdate {  }
+    div.editButtons > .editConfirm { background-color:orange;color:var(--logo-outline); padding: 5px 12px; }
+    div.editButtons > .editRemove, div.editButtons > .editCancel { color:var(--logo-outline); }
+    div.editButtons > .editRemove { background-color:tomato; }
+    div.editButtons > .editCancel { background-color: var(--logo-fur-light); }
 @endsection
 
 @section('moduleTitle')
@@ -72,6 +98,10 @@ Inventārs
             <p class="invName">Kombinzons (rudens)</p>
             <p class="invDescription">Rudens medību kombinzons; izskaties itkā būtu lapu čupa</p>
             <p class="invAmount">5 gab.</p>
+            <div class="editButtons">
+                <button class="editUpdate w3-button w3-round-large">Labot</button>
+                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+            </div>
         </div>
     </div>
 
@@ -80,17 +110,27 @@ Inventārs
         <div id="inv4">
             <p class="invName">Piekabe (skārda)</p>
             <p class="invDescription">Tā prastā piekabe bez jumta kur samest liekos štruntus kurus nav bail atstāt brīvā gaisā</p>
-            <p class="invAmount">1 gab.</p>
+            <p class="invAmount">1 gab.</p><div class="editButtons">
+                <button class="editUpdate w3-button w3-round-large">Labot</button>
+                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+            </div>
         </div>
         <div id="inv5">
             <p class="invName">Piekabe (sarkanā)</p>
             <p class="invDescription">Piekabe ar jumtu, kur parasti liekam uzšķērstos dzīvniekus no medībām</p>
             <p class="invAmount">1 gab.</p>
+            <div class="editButtons">
+                <button class="editUpdate w3-button w3-round-large">Labot</button>
+                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+            </div>
         </div>
         <div id="inv6">
             <p class="invName">Saldētava</p>
             <p class="invDescription">Guļamkastes ko Dāvids paķēra pa lēto izsolē; paturam tajā pārdodamos gaļas gabalus</p>
-            <p class="invAmount">3 gab.</p>
+            <p class="invAmount">3 gab.</p><div class="editButtons">
+                <button class="editUpdate w3-button w3-round-large">Labot</button>
+                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+            </div>
         </div>
     </div>
     
@@ -101,16 +141,27 @@ Inventārs
             <p class="invName">Brieža ciska</p>
             <p class="invDescription">Brieža ciska kas brieža ciska</p>
             <p class="invAmount">8 gab.</p>
+            <div class="editButtons">
+                <button class="editUpdate w3-button w3-round-large">Labot</button>
+                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+            </div>
         </div>
         <div id="inv8">
             <p class="invName">Zaķa āda</p>
             <p class="invDescription">Nodīrāta zaķa āda. Apstrādāta tikai tik tālu ka visa gaļa no tās nokasīta. Nekādu caurumu nav.</p>
-            <p class="invAmount">1 gab.</p>
+            <p class="invAmount">1 gab.</p><div class="editButtons">
+                <button class="editUpdate w3-button w3-round-large">Labot</button>
+                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+            </div>
         </div>
         <div id="inv9">
             <p class="invName">Stirnas plauša</p>
             <p class="invDescription">Nav tas smukākais gadījums, bet nav nekādas ložu driskas, tā kādroši var cept pankūku.</p>
             <p class="invAmount">2 gab.</p>
+            <div class="editButtons">
+                <button class="editUpdate w3-button w3-round-large">Labot</button>
+                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+            </div>
         </div>
     </div>
 
@@ -120,11 +171,19 @@ Inventārs
             <p class="invName">Brieža ragi</p>
             <p class="invDescription">3 gadus veca buka nomestie ragi ko atradām mežā. Galvaskausa šiem līdzi nebūs</p>
             <p class="invAmount">1 pāris</p>
+            <div class="editButtons">
+                <button class="editUpdate w3-button w3-round-large">Labot</button>
+                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+            </div>
         </div>
         <div id="inv11">
             <p class="invName">Mežacūkas kāja (ar spalvu)</p>
             <p class="invDescription">Laba lieta ko dot savam suņam grauzt. Sīkas gaļas driskas varbūt pie šīm ir palikušās.</p>
             <p class="invAmount">3 gab.</p>
+            <div class="editButtons">
+                <button class="editUpdate w3-button w3-round-large">Labot</button>
+                <button class="editRemove w3-button w3-round-large">Dzēst</button>
+            </div>
         </div>
     </div>
 
