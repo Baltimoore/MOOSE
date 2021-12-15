@@ -119,11 +119,11 @@ Profils
         </div>
         <div id="userHunting">
             <div id="userLicenseExists" class="userData">
-                <p>Ir medību license?</p>
+                <p>Ir medību licence?</p>
                 <p>Jā</p>
             </div>
             <div id="userLicenseNr" class="userData">
-                <p>Medību licenses nr:</p>
+                <p>Medību licences nr:</p>
                 <p>am15971</p>
             </div>
         </div>

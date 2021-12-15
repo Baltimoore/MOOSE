@@ -165,11 +165,11 @@ Profils
         </div>
         <div id="userHunting">
             <div id="userLicenseExists" class="userData">
-                <p>Ir medību license?</p>
+                <p>Ir medību licence?</p>
                 <p>Jā <input id="licenseYes" class="w3-check" type="checkbox" checked="checked"> Nē <input id="licenseNo" class="w3-check" type="checkbox"></p>
             </div>
             <div id="userLicenseNr" class="userData">
-                <p>Medību licenses nr:</p>
+                <p>Medību licences nr:</p>
                 <input id="addName" class="edit w3-input w3-round-large" type="text" pattern="[a-z]{2}-[0-9]{5}" required placeholder="aa12345">
             </div>
         </div>
