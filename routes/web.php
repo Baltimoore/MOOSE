@@ -67,3 +67,8 @@ Route::get('/profile-edit', function() {
 Route::get('/profile-all', function() {
     return view('registered.profile-list');
 }) -> name('profile-list');
+
+//profila skats, kas ļauj pievienot jaunu lietotāju
+Route::get('/profile-new', function() {
+    return view('registered.profile-new');
+}) -> name('profile-new');

@@ -120,11 +120,11 @@ div#userHead {
     align-content: center;
 }
     #userEdit > a {
-        grid-column: 1/3;
-        width:90%;
+        grid-column: 2/4;
+        width: 350px;
         margin-bottom: 15px;
     }
-    #userConfirm {
+    #userCancel {
         background-color: orange;
         color: var(--logo-outline);
     }
@@ -140,7 +140,7 @@ Profils
     <div id="userHead">
         <div id="userImage"><img src="/images/logo.svg" alt="Lietotāja profila attēls"></div>
         <div id="userID">
-            <input id="userName" class="edit w3-input w3-round-large" type="text" placeholder="Biedra vārds" value="Alnis Mousis" required>
+            <input id="userName" class="edit w3-input w3-round-large" type="text" placeholder="Biedra vārds" required>
             <select id="userRole" class="edit w3-select w3-round-large" name="option" required>
                 <option disabled selected hidden>Biedra loma</option>
                 <option value="Vad">Biedrības vadītājs</option>
@@ -155,12 +155,12 @@ Profils
         <div id="userPassport">
             <div id="userBirthDate" class="userData">
                 <p>Personas kods:</p>
-                <input id="addName" class="edit w3-input w3-round-large" type="text" pattern="[0-9]{6}-[0-9]{5}" required placeholder="123456-12345" value="041274-59734">
+                <input id="addName" class="edit w3-input w3-round-large" type="text" pattern="[0-9]{6}-[0-9]{5}" required placeholder="123456-12345">
                 
             </div>
             <div id="userPhone" class="userData">
                 <p>Telefona numurs:</p>
-                <input id="addNum" class="edit w3-input w3-round-large" type="tel" pattern="[0-9]{8}" required placeholder="12345678" value="16872687">
+                <input id="addNum" class="edit w3-input w3-round-large" type="tel" pattern="[0-9]{8}" required placeholder="12345678">
             </div>
         </div>
         <div id="userHunting">
@@ -170,12 +170,12 @@ Profils
             </div>
             <div id="userLicenseNr" class="userData">
                 <p>Medību licenses nr:</p>
-                <input id="addName" class="edit w3-input w3-round-large" type="text" pattern="[a-z]{2}-[0-9]{5}" required placeholder="aa12345" value="am15971">
+                <input id="addName" class="edit w3-input w3-round-large" type="text" pattern="[a-z]{2}-[0-9]{5}" required placeholder="aa12345">
             </div>
         </div>
         <div id="userEdit">
-            <a id="userConfirm" class="w3-button w3-round-large" href="{{ route('profile') }}">Labot biedrības dalībnieka datus</a>
-            <a id="userCancel" class="w3-button w3-round-large" href="{{ route('profile') }}">Atcelt datu labošanu</a>
+            <a id="userCreate" class="w3-button w3-round-large" href="{{ route('profile') }}">Izveidot lietotāju</a>
+            <a id="userCancel" class="w3-button w3-round-large" href="{{ route('profile-list') }}">Atcelt lietotāja izveidi</a>
         </div>
     </div>
 </div>

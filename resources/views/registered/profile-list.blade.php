@@ -53,6 +53,12 @@
     #userRun::before { content: 'Dzinēji'; }
     #userOther::before { content: 'Cits'; }
 
+/* lietotāja izveides poga */
+#userCreate {
+    margin-top:-10px;
+    margin-bottom:15px;
+    width:100%;
+}
 @endsection
 
 @section('moduleTitle')
@@ -151,6 +157,8 @@ Lietotāju saraksts
             <p class="amount"></p>
         </div>
     </div>
+
+    <a id="userCreate" class="w3-button w3-round-large" href="{{ route('profile-new') }}">Izveidot lietotāju</a>
 
 </div>
 @endsection
