@@ -27,6 +27,15 @@ body {
     font-weight: bold;
 }
 
+.moose-warn {
+    background-color: orange;
+    color: var(--logo-outline);
+}
+.moose-delete {
+    background-color: tomato;
+    color: var(--logo-outline);
+}
+
 /* popupu izskats */
 .w3-modal-content > header, .w3-modal-content > footer{
     color: var(--logo-bone-light);
