@@ -32,7 +32,7 @@
 @endsection
 
 @section('title')
-    ALNIS - @yield('moduleTitle')
+ALNIS - @yield('moduleTitle')
 @endsection
 
 @section('navbar')
@@ -57,7 +57,7 @@
 @endsection
 
 @section('content')
-    @yield('moduleContent')
+@yield('moduleContent')
 @endsection
 
 @section('scripts')
@@ -67,14 +67,14 @@
 
     var viewNavigator = document.getElementById("navbar");
     var logoArea = viewNavigator.offsetTop;
-    
+
     function stickifier() {
-        if (window.pageYOffset > logoArea) {
+        if ((window.pageYOffset) > logoArea) {
             viewNavigator.classList.add("w3-top");
         } else {
             viewNavigator.classList.remove("w3-top");
         }
     }
-    
-    @yield('moduleScripts')
+
+@yield('moduleScripts')
 @endsection

@@ -11,19 +11,19 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&family=Open+Sans:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700">
 <link rel="stylesheet" href="/css/main.css">
 <style>
-    @yield('globalStyles')
+@yield('globalStyles')
 </style>
 
 <body>
-    <div id="top">
-        @yield('navbar')
-    </div>
-    <div id="body" class="w3-container">
-        @yield('content')
-    </div>
+<div id="top">
+@yield('navbar')
+</div>
+<div id="body" class="w3-container">
+@yield('content')
+</div>
 
-    <script type="text/javascript">
-        @yield('scripts')
-    </script>
+<script type="text/javascript">
+@yield('scripts')
+</script>
 </body>
 </html>
