@@ -1,16 +1,16 @@
 @extends('base')
 
-<!-- - - - - - - - - - - -
+{{-- - - - - - - - - - - -
  - - Gatis Ieviņš, gi20002
  - - komentāri par skatu, tā izmantošanu utml
- - - - - - - - - - - - -->
+ - - - - - - - - - - - --}}
 
 @section('globalStyles')
-    <!-- Nav globāli skata izskata mainīgie -->
+    {{-- Nav globāli skata izskata mainīgie --}}
 @endsection
 
 @section('title')
-<!-- Ievadi tikai konkrētā skata nosaukumu; nekas cits nav nepieciešams -->
+{{-- Ievadi tikai konkrētā skata nosaukumu; nekas cits nav nepieciešams --}}
 @endsection
 
 @section('navbar')
@@ -18,10 +18,10 @@
 @endsection
 
 @section('saturs')
-    <!-- Mājaslapas galvenā satura sadaļa -->
+    {{-- Mājaslapas galvenā satura sadaļa --}}
 @endsection
 
 @section('scripts')
-    <!-- Uz doto brīdi būs tikai redirecti starp mājaslapām;
-        nekāda papildus funkcionalitāte maketam nav plānota -->
+    {{-- Uz doto brīdi būs tikai redirecti starp mājaslapām;
+        nekāda papildus funkcionalitāte maketam nav plānota --}}
 @endsection
