@@ -271,9 +271,28 @@ Inventārs
             modal.innerHTML = title;
         }
 
+
+
     // Labošanas funkcionalitātes ārējie mainīgie
     const valuesOld = [];
     const valuesNew = [];
+    // Labošanā izmantoto pogu definīcijas
+    // (lai nav atkārtoti jāveido tās katru reizi kā notiek izmaiņas)
+    const editCfrm = document.createElement('button');
+    editCfrm.setAttribute("class", "moose-warn w3-button w3-round-large");
+    editCfrm.innerHTML = "Mainīt";
+    // --- 
+    const editCncl = document.createElement('button');
+    editCncl.setAttribute("class", "editCancel w3-button w3-round-large");
+    editCncl.innerHTML = "Atcelt";
+    // ---
+    const editChange = document.createElement('button');
+    editChange.setAttribute("class", "w3-button w3-round-large");
+    editChange.innerHTML = "Labot";
+    // ---
+    const editDelete = document.createElement('button');
+    editDelete.setAttribute("class", "moose-delete w3-button w3-round-large");
+    editDelete.innerHTML = "Dzēst";
         // Pārveido tekstus uz labojamiem laukiem, un nomaina pogas
         function editFields(callerID) {
             // Atlasa aprakstus, kurus jāmaina par ievadlaukiem
@@ -309,16 +328,10 @@ Inventārs
             amnt.replaceWith(editAmnt);
 
             // Nomaina pogas   "Labot" un "Dzēst"   uz   "Mainīt" un "Atcelt"
-            var editCfrm = document.createElement('button');
-            editCfrm.setAttribute("class", "moose-warn w3-button w3-round-large");
             editCfrm.setAttribute("onclick", 'editConfirm("'+callerID+'")');
-            editCfrm.innerHTML = "Mainīt";
             document.getElementById(callerID.toString()).getElementsByClassName("editButtons")[0].getElementsByTagName("button")[0].replaceWith(editCfrm);
 
-            var editCncl = document.createElement('button');
-            editCncl.setAttribute("class", "editCancel w3-button w3-round-large");
             editCncl.setAttribute("onclick", 'editCancel("'+callerID+'")');
-            editCncl.innerHTML = "Atcelt";
             document.getElementById(callerID.toString()).getElementsByClassName("editButtons")[0].getElementsByTagName("button")[1].replaceWith(editCncl);
         }
         // Saglabā ievadītos datus par izmaiņām
@@ -341,11 +354,11 @@ Inventārs
             updatedName.innerHTML = name.value;
 
             var updatedDesc = document.createElement('p');
-            updatedDesc.setAttribute("class", "invName");
+            updatedDesc.setAttribute("class", "invDesc");
             updatedDesc.innerHTML = desc.value;
 
             var updatedAmnt = document.createElement('p');
-            updatedAmnt.setAttribute("class", "invName");
+            updatedAmnt.setAttribute("class", "invAmnt");
             updatedAmnt.innerHTML = amnt.value + valuesOld[callerID.toString()+"amnt"].substring(valuesOld[callerID.toString()+"amnt"].indexOf(' '));
 
             // Pārveidojam ievadlaukus uz teksta blāķiem
@@ -369,11 +382,11 @@ Inventārs
             updatedName.innerHTML = valuesOld[callerID.toString()+"name"];
 
             var updatedDesc = document.createElement('p');
-            updatedDesc.setAttribute("class", "invName");
+            updatedDesc.setAttribute("class", "invDesc");
             updatedDesc.innerHTML = valuesOld[callerID.toString()+"desc"];
 
             var updatedAmnt = document.createElement('p');
-            updatedAmnt.setAttribute("class", "invName");
+            updatedAmnt.setAttribute("class", "invDesc");
             updatedAmnt.innerHTML = valuesOld[callerID.toString()+"amnt"];
 
             // Pārveidojam ievadlaukus uz teksta blāķiem
@@ -385,16 +398,10 @@ Inventārs
             editButtons(callerID);
         }
         // Nomaina pogas no "Labot" un "Dzēst" atpakaļ uz "Mainīt" un "Atcelt"
-        function editButtons(callerID) {        
-            var editChange = document.createElement('button');
-            editChange.setAttribute("class", "w3-button w3-round-large");
+        function editButtons(callerID) {
             editChange.setAttribute("onclick", 'editFields("'+callerID+'")');
-            editChange.innerHTML = "Labot";
             document.getElementById(callerID.toString()).getElementsByClassName("editButtons")[0].getElementsByTagName("button")[0].replaceWith(editChange);
 
-            var editDelete = document.createElement('button');
-            editDelete.setAttribute("class", "moose-delete w3-button w3-round-large");
-            editDelete.innerHTML = "Dzēst";
             document.getElementById(callerID.toString()).getElementsByClassName("editButtons")[0].getElementsByTagName("button")[1].replaceWith(editDelete);
         }
 @endsection
