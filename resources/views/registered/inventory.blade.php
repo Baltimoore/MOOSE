@@ -214,19 +214,17 @@ Inventārs
             <header class="w3-container">
                 <span onclick="document.getElementById('inventoryAdd').style.display='none'"
                       class="w3-button w3-circle addButton w3-display-topright">&times;</span>
-                <h2 id="addWhat">Pievienot medījumu</h2>
+                <h2 id="addWhat">Pievienot lietiņu</h2>
             </header>
             <div class="w3-container">
                 <div class="w3-row-padding">
                     <div class="w3-col m7 l9">
                         <label>Inventāra nosaukums</label>
-                        <input id="addName" class="w3-input w3-round-large" type="text" required
-                               value="Meža cūkas ribas">
+                        <input id="addName" class="w3-input w3-round-large" type="text" required>
                     </div>
                     <div class="w3-col m3 l2">
                         <label>Daudzums</label>
-                        <input id="addAmount" class="w3-input w3-round-large" type="number" required
-                               value="15">
+                        <input id="addAmount" class="w3-input w3-round-large" type="number" required>
                     </div>
                     <div class="w3-col m2 l1">
                         <label>Mērs</label>
@@ -241,7 +239,7 @@ Inventārs
                 <div class="w3-row-padding">
                     <div class="w3-col">
                         <label>Inventāra apraksts</label>
-                        <textarea id="addDescription" class="w3-input w3-round-large" style="resize:none">Viena vai divas var būt lauztas</textarea>
+                        <textarea id="addDescription" class="w3-input w3-round-large" style="resize:none"></textarea>
                     </div>
                 </div>
                 
@@ -348,6 +346,28 @@ Inventārs
     }
     // Atceļ labošanas mainīgos, un atgriež iepriekšējos saglabātos datus
     function editCancel(callID) {
+        // Atlasa ievadlaukus, no kuriem jāievāc dati
+        var name = document.getElementById(callID.toString()).getElementsByTagName("textarea")[0];
+        var desc = document.getElementById(callID.toString()).getElementsByTagName("textarea")[1];
+        var amnt = document.getElementById(callID.toString()).getElementsByTagName("input")[0];
+        
+        // Pārveidošana uz prastiem teksta blāķiem
+        var updatedName = document.createElement('p');
+        updatedName.setAttribute("class", "invName");
+        updatedName.innerHTML = valuesOld[callID.toString()+"name"];
+
+        var updatedDesc = document.createElement('p');
+        updatedDesc.setAttribute("class", "invName");
+        updatedDesc.innerHTML = valuesOld[callID.toString()+"desc"];
+
+        var updatedAmnt = document.createElement('p');
+        updatedAmnt.setAttribute("class", "invName");
+        updatedAmnt.innerHTML = valuesOld[callID.toString()+"amnt"];
+
+        // Pārveidojam ievadlaukus uz teksta blāķiem
+        name.replaceWith(updatedName);
+        desc.replaceWith(updatedDesc);
+        amnt.replaceWith(updatedAmnt);
 
         // pogu labotājfunkcija
         editButtons(callID);
