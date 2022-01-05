@@ -6,7 +6,6 @@
  - - - - - - - - - - - --}}
 
 @section('moduleStyle')
-
 .inventoryType {
     position: relative;
     border: 2px solid var(--logo-fur-dark);
@@ -26,9 +25,7 @@
     .inventoryType > div:last-child { border: 0; }
 
 .inventoryType > div > .invName { font-weight: bold; }
-.inventoryType > div > .invAmount { font-style: italic; }
-
-.empty { display: none!important; }
+.inventoryType > div > .invAmnt { font-style: italic; }
 
 /* Piešķir visiem lietu konteineriem virsrakstus */
 .inventoryType::before {
@@ -58,13 +55,14 @@
 #addConfirm { margin: 0 15px 10px; align:right; }
 
 /* Izliekamies, ka notiktu labošana */
+.inventoryType > div { min-height: 100px; }
 .inventoryType > div > textarea {
     height: 70px;
     text-align: center;
 }
     textarea.invName { resize: none; width: 125px; }
-    textarea.invDescription { resize: vertical; }
-    input.invAmount {
+    textarea.invDesc { resize: vertical; }
+    input.invAmnt {
         height:30px;
         width: 60px;
         margin-left:10px;
@@ -78,9 +76,11 @@ div.editButtons {}
     div.editButtons > button { padding: 5px 15px; margin: 3px 0 }
     div.editButtons > button:first-child { margin-top:10px; }
     div.editButtons > button:last-child { margin-bottom:10px; }
+    div.editButtons > .moose-warn { padding: 5px 11px; }
     div.editButtons > .editCancel {
         background-color: var(--logo-fur-light);
         color:var(--logo-outline);
+        padding: 5px 13px;
     }
 @endsection
 
@@ -95,10 +95,10 @@ Inventārs
         <button id="addEquip" class="w3-button w3-circle addButton">+</button>
         <div id="inv1">
             <p class="invName">Kombinzons (rudens)</p>
-            <p class="invDescription">Rudens medību kombinzons; izskaties itkā būtu lapu čupa</p>
-            <p class="invAmount">5 gab.</p>
+            <p class="invDesc">Rudens medību kombinzons; izskaties itkā būtu lapu čupa</p>
+            <p class="invAmnt">5 gab.</p>
             <div class="editButtons">
-                <button class="w3-button w3-round-large">Labot</button>
+                <button class="w3-button w3-round-large" onclick='editFields("inv1")'>Labot</button>
                 <button class="moose-delete w3-button w3-round-large">Dzēst</button>
             </div>
         </div>
@@ -108,26 +108,28 @@ Inventārs
         <button id="addTech" class="w3-button w3-circle addButton">+</button>
         <div id="inv4">
             <p class="invName">Piekabe (skārda)</p>
-            <p class="invDescription">Tā prastā piekabe bez jumta kur samest liekos štruntus kurus nav bail atstāt brīvā gaisā</p>
-            <p class="invAmount">1 gab.</p><div class="editButtons">
-                <button class="w3-button w3-round-large">Labot</button>
+            <p class="invDesc">Tā prastā piekabe bez jumta kur samest liekos štruntus kurus nav bail atstāt brīvā gaisā</p>
+            <p class="invAmnt">1 gab.</p>
+            <div class="editButtons">
+                <button class="w3-button w3-round-large" onclick='editFields("inv4")'>Labot</button>
                 <button class="moose-delete w3-button w3-round-large">Dzēst</button>
             </div>
         </div>
         <div id="inv5">
             <p class="invName">Piekabe (sarkanā)</p>
-            <p class="invDescription">Piekabe ar jumtu, kur parasti liekam uzšķērstos dzīvniekus no medībām</p>
-            <p class="invAmount">1 gab.</p>
+            <p class="invDesc">Piekabe ar jumtu, kur parasti liekam uzšķērstos dzīvniekus no medībām</p>
+            <p class="invAmnt">1 gab.</p>
             <div class="editButtons">
-                <button class="w3-button w3-round-large">Labot</button>
+                <button class="w3-button w3-round-large" onclick='editFields("inv5")'>Labot</button>
                 <button class="moose-delete w3-button w3-round-large">Dzēst</button>
             </div>
         </div>
         <div id="inv6">
             <p class="invName">Saldētava</p>
-            <p class="invDescription">Guļamkastes ko Dāvids paķēra pa lēto izsolē; paturam tajā pārdodamos gaļas gabalus</p>
-            <p class="invAmount">3 gab.</p><div class="editButtons">
-                <button class="w3-button w3-round-large">Labot</button>
+            <p class="invDesc">Guļamkastes ko Dāvids paķēra pa lēto izsolē; paturam tajā pārdodamos gaļas gabalus</p>
+            <p class="invAmnt">3 gab.</p>
+            <div class="editButtons">
+                <button class="w3-button w3-round-large" onclick='editFields("inv6")'>Labot</button>
                 <button class="moose-delete w3-button w3-round-large">Dzēst</button>
             </div>
         </div>
@@ -138,27 +140,28 @@ Inventārs
         onclick="document.getElementById('inventoryAdd').style.display='block'">+</button>
         <div id="inv7">
             <p class="invName">Brieža ciska</p>
-            <p class="invDescription">Brieža ciska kas brieža ciska</p>
-            <p class="invAmount">8 gab.</p>
+            <p class="invDesc">Brieža ciska kas brieža ciska</p>
+            <p class="invAmnt">8 gab.</p>
             <div class="editButtons">
-                <button class="w3-button w3-round-large">Labot</button>
+                <button class="w3-button w3-round-large" onclick='editFields("inv7")'>Labot</button>
                 <button class="moose-delete w3-button w3-round-large">Dzēst</button>
             </div>
         </div>
         <div id="inv8">
             <p class="invName">Zaķa āda</p>
-            <p class="invDescription">Nodīrāta zaķa āda. Apstrādāta tikai tik tālu ka visa gaļa no tās nokasīta. Nekādu caurumu nav.</p>
-            <p class="invAmount">1 gab.</p><div class="editButtons">
-                <button class="w3-button w3-round-large">Labot</button>
+            <p class="invDesc">Nodīrāta zaķa āda. Apstrādāta tikai tik tālu ka visa gaļa no tās nokasīta. Nekādu caurumu nav.</p>
+            <p class="invAmnt">1 gab.</p>
+            <div class="editButtons">
+                <button class="w3-button w3-round-large" onclick='editFields("inv8")'>Labot</button>
                 <button class="moose-delete w3-button w3-round-large">Dzēst</button>
             </div>
         </div>
         <div id="inv9">
             <p class="invName">Stirnas plauša</p>
-            <p class="invDescription">Nav tas smukākais gadījums, bet nav nekādas ložu driskas, tā kādroši var cept pankūku.</p>
-            <p class="invAmount">2 gab.</p>
+            <p class="invDesc">Nav tas smukākais gadījums, bet nav nekādas ložu driskas, tā kādroši var cept pankūku.</p>
+            <p class="invAmnt">2 gab.</p>
             <div class="editButtons">
-                <button class="w3-button w3-round-large">Labot</button>
+                <button class="w3-button w3-round-large" onclick='editFields("inv9")'>Labot</button>
                 <button class="moose-delete w3-button w3-round-large">Dzēst</button>
             </div>
         </div>
@@ -168,19 +171,19 @@ Inventārs
         <button id="addBones" class="w3-button w3-circle addButton">+</button>
         <div id="inv10">
             <p class="invName">Brieža ragi</p>
-            <p class="invDescription">3 gadus veca buka nomestie ragi ko atradām mežā. Galvaskausa šiem līdzi nebūs</p>
-            <p class="invAmount">1 pāris</p>
+            <p class="invDesc">3 gadus veca buka nomestie ragi ko atradām mežā. Galvaskausa šiem līdzi nebūs</p>
+            <p class="invAmnt">1 pāris</p>
             <div class="editButtons">
-                <button class="w3-button w3-round-large">Labot</button>
+                <button class="w3-button w3-round-large" onclick='editFields("inv10")'>Labot</button>
                 <button class="moose-delete w3-button w3-round-large">Dzēst</button>
             </div>
         </div>
         <div id="inv11">
             <p class="invName">Mežacūkas kāja (ar spalvu)</p>
-            <p class="invDescription">Laba lieta ko dot savam suņam grauzt. Sīkas gaļas driskas varbūt pie šīm ir palikušās.</p>
-            <p class="invAmount">3 gab.</p>
+            <p class="invDesc">Laba lieta ko dot savam suņam grauzt. Sīkas gaļas driskas varbūt pie šīm ir palikušās.</p>
+            <p class="invAmnt">3 gab.</p>
             <div class="editButtons">
-                <button class="w3-button w3-round-large">Labot</button>
+                <button class="w3-button w3-round-large" onclick='editFields("inv11")'>Labot</button>
                 <button class="moose-delete w3-button w3-round-large">Dzēst</button>
             </div>
         </div>
@@ -190,18 +193,18 @@ Inventārs
         <button id="addOther" class="w3-button w3-circle addButton">+</button>
         <div id="inv13">
             <p class="invName"></p>
-            <p class="invDescription"></p>
-            <p class="invAmount"></p>
+            <p class="invDesc"></p>
+            <p class="invAmnt"></p>
         </div>
         <div id="inv14">
             <p class="invName"></p>
-            <p class="invDescription"></p>
-            <p class="invAmount"></p>
+            <p class="invDesc"></p>
+            <p class="invAmnt"></p>
         </div>
         <div id="inv15">
             <p class="invName"></p>
-            <p class="invDescription"></p>
-            <p class="invAmount"></p>
+            <p class="invDesc"></p>
+            <p class="invAmnt"></p>
         </div>
     </div>
 
@@ -255,4 +258,111 @@ Inventārs
 @section('moduleScripts')
     // Inventāra pievienošanas popups (tikai medījumam pieslēgts)
     var modal = document.getElementById('inventoryAdd');
+
+
+    // Labošanas funkcionalitātes ārējie mainīgie
+    const valuesOld = [];
+    const valuesNew = [];
+
+    // Pārveido tekstus uz labojamiem laukiem, un nomaina pogas
+    function editFields(callID) {
+        // Atlasa aprakstus, kurus jāmaina par ievadlaukiem
+        var name = document.getElementById(callID.toString()).getElementsByTagName("p")[0];
+        var desc = document.getElementById(callID.toString()).getElementsByTagName("p")[1];
+        var amnt = document.getElementById(callID.toString()).getElementsByTagName("p")[2];
+
+        // Saglabā oriģinālās vērtības
+        valuesOld[callID.toString()+"name"] = name.innerHTML;
+        valuesOld[callID.toString()+"desc"] = desc.innerHTML;
+        valuesOld[callID.toString()+"amnt"] = amnt.innerHTML;
+        console.log(valuesOld);
+
+        // Pārveido aprakstus uz ievadlaukiem
+        var editName = document.createElement('textarea');
+        editName.setAttribute("class", "invName w3-input w3-round-large");
+        editName.setAttribute("type", "text");
+        editName.innerHTML = name.innerHTML;
+
+        var editDesc = document.createElement('textarea');
+        editDesc.setAttribute("class", "invDesc w3-input w3-round-large");
+        editDesc.setAttribute("type", "text");
+        editDesc.innerHTML = desc.innerHTML;
+
+        var editAmnt = document.createElement('input');
+        editAmnt.setAttribute("class", "invAmnt w3-input w3-round-large");
+        editAmnt.setAttribute("type", "number");
+        editAmnt.setAttribute("value", amnt.innerHTML.match(/\d+/));
+
+        // Aizvieto teksta laukus uz labojamiem laukiem
+        name.replaceWith(editName);
+        desc.replaceWith(editDesc);
+        amnt.replaceWith(editAmnt);
+
+        // Nomaina pogas   "Labot" un "Dzēst"   uz   "Mainīt" un "Atcelt"
+        var editCfrm = document.createElement('button');
+        editCfrm.setAttribute("class", "moose-warn w3-button w3-round-large");
+        editCfrm.setAttribute("onclick", 'editConfirm("'+callID+'")');
+        editCfrm.innerHTML = "Mainīt";
+        document.getElementById(callID.toString()).getElementsByClassName("editButtons")[0].getElementsByTagName("button")[0].replaceWith(editCfrm);
+
+        var editCncl = document.createElement('button');
+        editCncl.setAttribute("class", "editCancel w3-button w3-round-large");
+        editCncl.setAttribute("onclick", 'editCancel("'+callID+'")');
+        editCncl.innerHTML = "Atcelt";
+        document.getElementById(callID.toString()).getElementsByClassName("editButtons")[0].getElementsByTagName("button")[1].replaceWith(editCncl);
+    }
+    // Saglabā ievadītos datus par izmaiņām
+    function editConfirm(callID) {
+        // Atlasa ievadlaukus, no kuriem jāievāc dati
+        var name = document.getElementById(callID.toString()).getElementsByTagName("textarea")[0];
+        var desc = document.getElementById(callID.toString()).getElementsByTagName("textarea")[1];
+        var amnt = document.getElementById(callID.toString()).getElementsByTagName("input")[0];
+
+        // Nosūtīšana uz datubāzi
+        valuesNew[callID.toString()+"name"] = name.value;
+        valuesNew[callID.toString()+"desc"] = desc.value;
+        valuesNew[callID.toString()+"amnt"] = amnt.value;
+        console.log(valuesNew);
+            // Ievieto skriptu, kas ievieto nolasītos datus DB, kad tā uzstādīta
+        
+        // Pārveidošana uz prastiem teksta blāķiem
+        var updatedName = document.createElement('p');
+        updatedName.setAttribute("class", "invName");
+        updatedName.innerHTML = name.value;
+
+        var updatedDesc = document.createElement('p');
+        updatedDesc.setAttribute("class", "invName");
+        updatedDesc.innerHTML = desc.value;
+
+        var updatedAmnt = document.createElement('p');
+        updatedAmnt.setAttribute("class", "invName");
+        updatedAmnt.innerHTML = amnt.value + valuesOld[callID.toString()+"amnt"].substring(valuesOld[callID.toString()+"amnt"].indexOf(' '));
+
+        // Pārveidojam ievadlaukus uz teksta blāķiem
+        name.replaceWith(updatedName);
+        desc.replaceWith(updatedDesc);
+        amnt.replaceWith(updatedAmnt);
+
+        // pogu labotājfunkcija
+        editButtons(callID);
+    }
+    // Atceļ labošanas mainīgos, un atgriež iepriekšējos saglabātos datus
+    function editCancel(callID) {
+
+        // pogu labotājfunkcija
+        editButtons(callID);
+    }
+    // Nomaina pogas no "Labot" un "Dzēst" atpakaļ uz "Mainīt" un "Atcelt"
+    function editButtons(callID) {        
+        var editChange = document.createElement('button');
+        editChange.setAttribute("class", "w3-button w3-round-large");
+        editChange.setAttribute("onclick", 'editFields("'+callID+'")');
+        editChange.innerHTML = "Labot";
+        document.getElementById(callID.toString()).getElementsByClassName("editButtons")[0].getElementsByTagName("button")[0].replaceWith(editChange);
+
+        var editDelete = document.createElement('button');
+        editDelete.setAttribute("class", "moose-delete w3-button w3-round-large");
+        editDelete.innerHTML = "Dzēst";
+        document.getElementById(callID.toString()).getElementsByClassName("editButtons")[0].getElementsByTagName("button")[1].replaceWith(editDelete);
+    }
 @endsection
