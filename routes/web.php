@@ -14,11 +14,6 @@ use app\Http\Controllers\checkUserCredentials;
 |
 */
 
-/* Pamata skats nav nepieciešams; saglabāju, lai pārliecinātos, vai Laravel strādā
-Route::get('/', function() {
-    return view('welcome');
-});*/
-
 //pirmais skats, kas parādās mājaslapas atvēršanā; nekur citur nevar aiziet neievadot savus datus
 Route::get('/', function() {
     return view('logIn');
