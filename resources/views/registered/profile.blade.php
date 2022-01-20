@@ -81,7 +81,7 @@ div#userHead {
 #eventsParticipating { padding: 0 20px; }
     #eventsParticipating > div {
         display: grid;
-        grid-template-columns: 100px 80px 100px auto 100px;
+        grid-template-columns: 100px 100px auto 100px 100px;
         border-bottom: 1px dashed var(--logo-fur-light);
         align-items: center;
         text-align: center;
@@ -99,7 +99,6 @@ Profils
 @endsection
 
 @section('moduleContent')
-{{-- Moduļa galvenā satura sadaļa --}}
 <div id="userWrapper">
     <div id="userHead">
         <div id="userImage"><img src="/images/logo.svg" alt="Lietotāja profila attēls"></div>
@@ -131,24 +130,24 @@ Profils
     <div id="eventsParticipating">
         <div id="titles">
             <p>Medību organizators</p>
-            <p>Medību tips</p>
             <p>Medību norises datums</p>
             <p>Medību norises vieta</p>
+            <p>Papildus informācija</p>
             <p>Atteikties no piedalīšanās medībās</p>
         </div>
         <div id="event1">
-            <p id="event1Organiser">Juris Padels</p>
-            <p id="event1Type">Medības</p>
-            <p id="event1Date">21-05-2022</p>
-            <p id="event1Location"><a href="{{-- route('map') --}}">Mežs "Zemzariņi"</a></p>
-            <button id="event1Deny" class="w3-button w3-round-large">Atteikties</button>
+            <p id="ev1Org"><a href="{{-- route('profile') --}}">Juris Padels</a></p>
+            <p id="ev1Dte">21-05-2022</p>
+            <p id="ev1Loc"><a href="{{-- route('map') --}}">Mežs "Zemzariņi"</a></p>
+            <button id="ev1Info" class="w3-button w3-round-large">Info</button>
+            <button id="ev1Deny" class="w3-button w3-round-large">Atteikties</button>
         </div>
         <div id="event2">
-            <p id="event2Organiser">Miķelis Zindars</p>
-            <p id="event2Type">Dzinēj-medības</p>
-            <p id="event2Date">26-05-2022</p>
-            <p id="event2Location"><a href="{{-- route('map') --}}">Mežs "Klubiņi"</a></p>
-            <button id="event2Deny" class="w3-button w3-round-large">Atteikties</button>
+            <p id="ev2Org"><a href="{{-- route('profile') --}}">Miķelis Zindars</a></p>
+            <p id="ev2Dte">26-05-2022</p>
+            <p id="ev2Loc"><a href="{{-- route('map') --}}">Mežs "Klubiņi"</a></p>
+            <button id="ev2Info" class="eventInfo w3-button w3-round-large">Info</button>
+            <button id="ev2Deny" class="w3-button w3-round-large">Atteikties</button>
         </div>
     </div>
 </div>
