@@ -51,14 +51,13 @@
     width: 110px;
     margin: 3px 0
 }
-
+/* -------------------------------------------- */
 /* Biedrības pievienošanas poga */
-#societyCreate {
+#societyNew {
     margin-top:15px;
     margin-bottom:-15px;
     width:100%;
 }
-
 /* Popup aizvēršanas poga */
 .addButton {
     position: absolute;
@@ -67,7 +66,12 @@
     right: -20px;
     padding: 0px 12px;
 }
-/* -------------------------------------------- */
+
+/* Popup iekšu noformējums */
+#societyAdd input, #societyAdd select {height:40px}
+#societyButtons {margin-bottom:15px;}
+    #societyButtons a {width:100%;}
+
 @yield('popupStyle')
 @endsection
 
@@ -86,8 +90,8 @@ MOOSE sistēma @yield('popupTitle')
 
 @section('content')
 <div id="adminWrapper">
-    <a id="societyCreate" class="w3-button w3-round-large"
-        onclick="document.getElementById('videoAdd').setAttribute('style','display:block;')">Reģistrēt jaunu biedrību</a>
+    <a id="societyNew" class="w3-button w3-round-large"
+        onclick="document.getElementById('societyAdd').setAttribute('style','display:block;')">Reģistrēt jaunu biedrību</a>
 
     <div id="societyList">
         <div id="soc1">
@@ -148,32 +152,73 @@ MOOSE sistēma @yield('popupTitle')
     </div>
 </div>
 
-<div id="videoAdd" class="w3-modal">
+<div id="societyAdd" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
         <header class="w3-container">
             <span class="w3-button w3-circle addButton w3-display-topright"
-                onclick='document.getElementById("videoAdd").setAttribute("style", "")'>&times;</span>
-            <h2 id="addWhat">Pievienot ierakstu</h2>
+                onclick='document.getElementById("societyAdd").setAttribute("style", "")'>&times;</span>
+            <h2 id="addWhat">Pievienot biedrību</h2>
         </header>
         <div class="w3-container">
-            <div class="w3-row-padding">
-                <div class="w3-col m6 l10">
-                    <label>Ieraksta uzņemšanas datums</label>
-                    <input id="addDate" class="w3-input w3-round-large" type="date" required>
-                </div>
-                <div class="w3-col m6 l2">
-                    <label>Pievienot video failu</label>
-                    <input id="addFile" class="w3-input w3-round-large" type="file" accept=".mp4" required>
-                </div>
-            </div>
-            <div class="w3-row-padding">
-                <div class="w3-col">
-                    <label>Video ieraksta apraksts</label>
-                    <textarea id="addDescription" class="w3-input w3-round-large" style="resize:none"></textarea>
+            
+            <div id="socTitle" class="w3-row-padding">
+                <div class="w3-col rest">
+                    <label>Jaunās biedrības nosaukums</label>
+                    <input class="edit w3-input w3-round-large" type="text" required
+                       placeholder="Biedrības nosaukums">
                 </div>
             </div>
 
-            <a id="addConfirm" class="w3-button w3-round-large" href="#">Pievienot jaunu inventāru</a>
+            <div id="leaderID" class="w3-row-padding">
+                <div id="leaderName" class="w3-col m7">
+                    <label>Biedrības vadītāja vārds</label>
+                    <input type="text" placeholder="Lietotāja vārds" required
+                        class="edit w3-input w3-round-large">
+                </div>
+                <div id="leaderRole" class="w3-col m5">
+                    <label>Loma</label>
+                    <select name="option" class="edit w3-input w3-round-large" disabled>
+                        <option selected value="Vad">Biedrības vadītājs</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="leaderPassport" class="w3-row-padding">
+                <div id="leaderPK" class="w3-col m6">
+                    <label>Vadītāja personas kods</label>
+                    <input type="text" pattern="^[0-9]{6}-[0-9]{5}$" placeholder="123456-12345"
+                        class="edit w3-input w3-round-large" required>
+                </div>
+                <div id="leaderPhone" class="w3-col m6">
+                    <label>Vadītāja telefona numurs</label>
+                    <input type="text" pattern="^[0-9]{8}$" placeholder="12345678"
+                        class="edit w3-input w3-round-large" required>
+                </div>
+            </div>
+
+            <div id="leaderHunting" class="w3-row-padding">
+                <div class="w3-col m4">
+                    <label>Medību license?</label>
+                    <div id="checkboxes">
+                        <label>Jā</label> <input id="licenseYes" class="w3-check" type="checkbox" checked="checked" disabled>
+                        <label>Nē</label> <input id="licenseNo" class="w3-check" type="checkbox" disabled>
+                    </div>
+                </div>
+                <div id="leaderPhone" class="w3-col m8">
+                    <label>Vadītāja medību licenses numurs</label>
+                    <input type="text" pattern="^[a-z]{2}[0-9]{5}$" placeholder="aa12345"
+                           class="edit w3-input w3-round-large" required>
+                </div>
+            </div>
+
+            <div id="societyButtons" class="w3-row-padding">
+                <div class="w3-col m6">
+                    <a id="societyCreate" class="w3-button w3-round-large">Izveidot biedrību</a>
+                </div>
+                <div class="w3-col m6">
+                    <a id="societyCreate" class="w3-button w3-round-large moose-cancel">Atcelt biedrības izveidi</a>
+                </div>
+            </div>
         </div>
         <footer class="w3-container">
             <p>Palīgteksts atrodas šeit</p>
