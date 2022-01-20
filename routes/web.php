@@ -72,3 +72,8 @@ Route::get('/profile-all', function() {
 Route::get('/profile-new', function() {
     return view('member.profile-new');
 }) -> name('profile-new');
+
+//administratora pieslēgšanās skats
+Route::get('/home', function() {
+    return view('admin.base');
+}) -> name('adminHome');
