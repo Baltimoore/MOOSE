@@ -77,9 +77,7 @@ div.editButtons {}
     div.editButtons > button:first-child { margin-top:10px; }
     div.editButtons > button:last-child { margin-bottom:10px; }
     div.editButtons > .moose-warn { padding: 5px 11px; }
-    div.editButtons > .moose-cancel {
-        padding: 5px 13px;
-    }
+    div.editButtons > .moose-cancel { padding: 5px 13px; }
 @endsection
 
 @section('moduleTitle')
