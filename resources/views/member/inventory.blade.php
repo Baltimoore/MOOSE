@@ -1,4 +1,4 @@
-@extends('registered.base')
+@extends('member.base')
 
 {{-- - - - - - - - - - - -
  - - Gatis Ieviņš, gi20002

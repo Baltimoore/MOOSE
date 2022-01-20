@@ -1,4 +1,4 @@
-@extends('registered.base')
+@extends('member.base')
 
 {{-- - - - - - - - - - - -
  - - Gatis Ieviņš, gi20002
@@ -10,8 +10,8 @@
 #userWrapper {
     margin-top:30px;
     display: grid;
-    justify-content: space-evenly;
     grid-template-columns: var(--display-minWidth)-10px;
+    justify-content: space-evenly;
 }
 #userWrapper > div {
     border: 2px solid var(--logo-fur-dark);
@@ -49,15 +49,13 @@ div#userHead {
             font-size: 16px;
             font-style: italic;
         }
-    #userEdit {
+    #userReplaceImg {
         border-top: 1px dashed var(--logo-fur-light);
         grid-column: 2;
         grid-row: 2;
     }
 
-#userBody {
-    background-color: var(--logo-bone-light);
-}
+#userBody { background-color: var(--logo-bone-light); }
 #userBody > div {
     border-bottom: 2px dotted var(--logo-fur-dark);
 }
@@ -92,6 +90,44 @@ div#userHead {
     }
     #eventsParticipating > div:last-child { border: 0; }
 
+/* Izliekamies, ka notiktu labošana */
+.edit { background-color: var(--logo-fur-dark); }
+#userID {
+    display: grid;
+    grid-template-columns: 200px auto;
+    margin-top: 25px;
+}
+#userID > .edit {
+    padding: 0 10px;
+    margin-top:-3px;
+}
+    #userName, #userRole {
+        width:180px;
+        height:30px;
+    }
+    #userReplaceImg { margin-left: 10px; }
+
+#userPassport > div > input.edit, #userHunting > div > input.edit {
+    height: 30px;
+    width: 150px;
+    margin-top: 11px;
+}
+
+#userEdit {
+    padding-top: 15px;
+    display: grid;
+    justify-content: space-around;
+    align-content: center;
+}
+    #userEdit > a {
+        grid-column: 2/4;
+        width: 350px;
+        margin-bottom: 15px;
+    }
+    #userCancel {
+        background-color: orange;
+        color: var(--logo-outline);
+    }
 @endsection
 
 @section('moduleTitle')
@@ -103,52 +139,43 @@ Profils
 <div id="userWrapper">
     <div id="userHead">
         <div id="userImage"><img src="/images/logo.svg" alt="Lietotāja profila attēls"></div>
-        <div id="userID"><span id="userName">Alnis Mūsis</span> - <span id="userRole">biedrības vadītājs</span></div>
-        <a id="userEdit" href="{{ route('profile-edit') }}">Labot profila informāciju</a>
+        <div id="userID">
+            <input id="userName" class="edit w3-input w3-round-large" type="text" placeholder="Biedra vārds" required>
+            <select id="userRole" class="edit w3-select w3-round-large" name="option" required>
+                <option disabled selected hidden>Biedra loma</option>
+                <option value="Vad">Biedrības vadītājs</option>
+                <option value="Org">Medību organizators</option>
+                <option value="Med">Mednieks</option>
+                <option value="Dzi">Dzinējs</option>
+            </select>
+        </div>
+        <a id="userReplaceImg" href="#">Mainīt attēlu</a>
     </div>
     <div id="userBody">
         <div id="userPassport">
             <div id="userBirthDate" class="userData">
                 <p>Personas kods:</p>
-                <p>04121974-59734</p>
+                <input id="addName" class="edit w3-input w3-round-large" type="text" pattern="[0-9]{6}-[0-9]{5}" required placeholder="123456-12345">
+                
             </div>
             <div id="userPhone" class="userData">
                 <p>Telefona numurs:</p>
-                <p>16872687</p>
+                <input id="addNum" class="edit w3-input w3-round-large" type="tel" pattern="[0-9]{8}" required placeholder="12345678">
             </div>
         </div>
         <div id="userHunting">
             <div id="userLicenseExists" class="userData">
                 <p>Ir medību licence?</p>
-                <p>Jā</p>
+                <p>Jā <input id="licenseYes" class="w3-check" type="checkbox" checked="checked"> Nē <input id="licenseNo" class="w3-check" type="checkbox"></p>
             </div>
             <div id="userLicenseNr" class="userData">
                 <p>Medību licences nr:</p>
-                <p>am15971</p>
+                <input id="addName" class="edit w3-input w3-round-large" type="text" pattern="[a-z]{2}-[0-9]{5}" required placeholder="aa12345">
             </div>
         </div>
-    </div>
-    <div id="eventsParticipating">
-        <div id="titles">
-            <p>Medību organizators</p>
-            <p>Medību tips</p>
-            <p>Medību norises datums</p>
-            <p>Medību norises vieta</p>
-            <p>Atteikties no piedalīšanās medībās</p>
-        </div>
-        <div id="event1">
-            <p id="event1Organiser">Juris Padels</p>
-            <p id="event1Type">Medības</p>
-            <p id="event1Date">21-05-2022</p>
-            <p id="event1Location"><a href="{{-- route('map') --}}">Mežs "Zemzariņi"</a></p>
-            <button id="event1Deny" class="w3-button w3-round-large">Atteikties</button>
-        </div>
-        <div id="event2">
-            <p id="event2Organiser">Miķelis Zindars</p>
-            <p id="event2Type">Dzinēj-medības</p>
-            <p id="event2Date">26-05-2022</p>
-            <p id="event2Location"><a href="{{-- route('map') --}}">Mežs "Klubiņi"</a></p>
-            <button id="event2Deny" class="w3-button w3-round-large">Atteikties</button>
+        <div id="userEdit">
+            <a id="userCreate" class="w3-button w3-round-large" href="{{ route('profile') }}">Izveidot lietotāju</a>
+            <a id="userCancel" class="w3-button w3-round-large" href="{{ route('profile-list') }}">Atcelt lietotāja izveidi</a>
         </div>
     </div>
 </div>

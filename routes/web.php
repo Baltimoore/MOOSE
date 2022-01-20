@@ -27,48 +27,48 @@ Route::get('/', function() {
 
 //kalendāra skats, kas digitālā kalendārā attēlo plānotās un bijušās medības
 Route::get('/calendar', function() {
-    return view('registered.calendar');
+    return view('member.calendar');
 }) -> name('calendar');
 
 
 //kartes skats, kas ievietotā logā attēlo medību teritoriju rajonus. pašlaik tikai fotka
 Route::get('/map', function() {
-    return view('registered.map');
+    return view('member.map');
 }) -> name('map');
 
 //inventāra labošanas skats, kur visi ekipējuma dati ir modificējami
 Route::get('/inventory-edit', function() {
-    return view('registered.inventory-edit');
+    return view('member.inventory-edit');
 }) -> name('inventory-edit');
 
 //inventāra skats, kas attēlo visu ekipējumu, kas tieši pieder biedrībai
 Route::get('/inventory', function() {
-    return view('registered.inventory');
+    return view('member.inventory');
 }) -> name('inventory');
 
 
 //ierakstu skats, kas attēlo visus datubāzē saglabātos videoierakstus
 Route::get('/recordings', function() {
-    return view('registered.recordings');
+    return view('member.recordings');
 }) -> name('recordings');
 
 
 //profila skats, kas attēlo lietotāja informāciju; izskatās līdzīgi kā CSDD
 Route::get('/profile', function() {
-    return view('registered.profile');
+    return view('member.profile');
 }) -> name('profile');
 
 //profila skats, kas ļauj labot lietotāja informāciju
 Route::get('/profile-edit', function() {
-    return view('registered.profile-edit');
+    return view('member.profile-edit');
 }) -> name('profile-edit');
 
 //profilu saraksts, kas attēlo visus biedrībā reģistrētos dalībniekus
 Route::get('/profile-all', function() {
-    return view('registered.profile-list');
+    return view('member.profile-list');
 }) -> name('profile-list');
 
 //profila skats, kas ļauj pievienot jaunu lietotāju
 Route::get('/profile-new', function() {
-    return view('registered.profile-new');
+    return view('member.profile-new');
 }) -> name('profile-new');
