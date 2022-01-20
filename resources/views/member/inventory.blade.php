@@ -77,9 +77,7 @@ div.editButtons {}
     div.editButtons > button:first-child { margin-top:10px; }
     div.editButtons > button:last-child { margin-bottom:10px; }
     div.editButtons > .moose-warn { padding: 5px 11px; }
-    div.editButtons > .editCancel {
-        background-color: var(--logo-fur-light);
-        color:var(--logo-outline);
+    div.editButtons > .moose-cancel {
         padding: 5px 13px;
     }
 @endsection
@@ -274,134 +272,148 @@ Inventārs
 
 
     // Labošanas funkcionalitātes ārējie mainīgie
-    const valuesOld = [];
-    const valuesNew = [];
+        const valuesOld = [];
+        const valuesNew = [];
     // Labošanā izmantoto pogu definīcijas
     // (lai nav atkārtoti jāveido tās katru reizi kā notiek izmaiņas)
-    const editCfrm = document.createElement('button');
-    editCfrm.setAttribute("class", "moose-warn w3-button w3-round-large");
-    editCfrm.innerHTML = "Mainīt";
-    // --- 
-    const editCncl = document.createElement('button');
-    editCncl.setAttribute("class", "editCancel w3-button w3-round-large");
-    editCncl.innerHTML = "Atcelt";
-    // ---
-    const editChange = document.createElement('button');
-    editChange.setAttribute("class", "w3-button w3-round-large");
-    editChange.innerHTML = "Labot";
-    // ---
-    const editDelete = document.createElement('button');
-    editDelete.setAttribute("class", "moose-delete w3-button w3-round-large");
-    editDelete.innerHTML = "Dzēst";
-        // Pārveido tekstus uz labojamiem laukiem, un nomaina pogas
-        function editFields(callerID) {
-            // Atlasa aprakstus, kurus jāmaina par ievadlaukiem
-            var name = document.getElementById(callerID.toString()).getElementsByTagName("p")[0];
-            var desc = document.getElementById(callerID.toString()).getElementsByTagName("p")[1];
-            var amnt = document.getElementById(callerID.toString()).getElementsByTagName("p")[2];
+        const editCfrm = document.createElement('button');
+        editCfrm.setAttribute("class", "moose-warn w3-button w3-round-large");
+        editCfrm.innerHTML = "Mainīt";
+        // --- 
+        const editCncl = document.createElement('button');
+        editCncl.setAttribute("class", "moose-cancel w3-button w3-round-large");
+        editCncl.innerHTML = "Atcelt";
+        // ---
+        const editChange = document.createElement('button');
+        editChange.setAttribute("class", "w3-button w3-round-large");
+        editChange.innerHTML = "Labot";
+        // ---
+        const editDelete = document.createElement('button');
+        editDelete.setAttribute("class", "moose-delete w3-button w3-round-large");
+        editDelete.innerHTML = "Dzēst";
 
-            // Saglabā oriģinālās vērtības
-            valuesOld[callerID.toString()+"name"] = name.innerHTML;
-            valuesOld[callerID.toString()+"desc"] = desc.innerHTML;
-            valuesOld[callerID.toString()+"amnt"] = amnt.innerHTML;
-            console.log(valuesOld);
+    // Pārveido tekstus uz labojamiem laukiem, un nomaina pogas
+    function editFields(callerID) {
+        // Atlasa aprakstus, kurus jāmaina par ievadlaukiem
+        callerID = callerID.toString();
+        var father = document.getElementById(callerID);
+        var name = father.getElementsByTagName("p")[0];
+        var desc = father.getElementsByTagName("p")[1];
+        var amnt = father.getElementsByTagName("p")[2];
 
-            // Pārveido aprakstus uz ievadlaukiem
-            var editName = document.createElement('textarea');
-            editName.setAttribute("class", "invName w3-input w3-round-large");
-            editName.setAttribute("type", "text");
-            editName.innerHTML = name.innerHTML;
+        // Saglabā oriģinālās vērtības
+        valuesOld[callerID+"name"] = name.innerHTML;
+        valuesOld[callerID+"desc"] = desc.innerHTML;
+        valuesOld[callerID+"amnt"] = amnt.innerHTML;
+        console.log(valuesOld);
 
-            var editDesc = document.createElement('textarea');
-            editDesc.setAttribute("class", "invDesc w3-input w3-round-large");
-            editDesc.setAttribute("type", "text");
-            editDesc.innerHTML = desc.innerHTML;
+        // Pārveido aprakstus uz ievadlaukiem
+        var editName = document.createElement('textarea');
+        editName.setAttribute("class", "invName w3-input w3-round-large");
+        editName.setAttribute("type", "text");
+        editName.innerHTML = name.innerHTML;
 
-            var editAmnt = document.createElement('input');
-            editAmnt.setAttribute("class", "invAmnt w3-input w3-round-large");
-            editAmnt.setAttribute("type", "number");
-            editAmnt.setAttribute("value", amnt.innerHTML.match(/\d+/));
+        var editDesc = document.createElement('textarea');
+        editDesc.setAttribute("class", "invDesc w3-input w3-round-large");
+        editDesc.setAttribute("type", "text");
+        editDesc.innerHTML = desc.innerHTML;
 
-            // Aizvieto teksta laukus uz labojamiem laukiem
-            name.replaceWith(editName);
-            desc.replaceWith(editDesc);
-            amnt.replaceWith(editAmnt);
+        var editAmnt = document.createElement('input');
+        editAmnt.setAttribute("class", "invAmnt w3-input w3-round-large");
+        editAmnt.setAttribute("type", "number");
+        editAmnt.setAttribute("value", amnt.innerHTML.match(/\d+/));
 
-            // Nomaina pogas   "Labot" un "Dzēst"   uz   "Mainīt" un "Atcelt"
-            editCfrm.setAttribute("onclick", 'editConfirm("'+callerID+'")');
-            document.getElementById(callerID.toString()).getElementsByClassName("editButtons")[0].getElementsByTagName("button")[0].replaceWith(editCfrm);
+        // Aizvieto teksta laukus uz labojamiem laukiem
+        name.replaceWith(editName);
+        desc.replaceWith(editDesc);
+        amnt.replaceWith(editAmnt);
 
-            editCncl.setAttribute("onclick", 'editCancel("'+callerID+'")');
-            document.getElementById(callerID.toString()).getElementsByClassName("editButtons")[0].getElementsByTagName("button")[1].replaceWith(editCncl);
-        }
-        // Saglabā ievadītos datus par izmaiņām
-        function editConfirm(callerID) {
-            // Atlasa ievadlaukus, no kuriem jāievāc dati
-            var name = document.getElementById(callerID.toString()).getElementsByTagName("textarea")[0];
-            var desc = document.getElementById(callerID.toString()).getElementsByTagName("textarea")[1];
-            var amnt = document.getElementById(callerID.toString()).getElementsByTagName("input")[0];
+        // Nomaina pogas   "Labot" un "Dzēst"   uz   "Mainīt" un "Atcelt"
+        var fatherButtons = father.getElementsByClassName("editButtons")[0];
+        editCfrm.setAttribute("onclick", 'editConfirm("'+callerID+'")');
+        fatherButtons.getElementsByTagName("button")[0].replaceWith(editCfrm);
 
-            // Nosūtīšana uz datubāzi
-            valuesNew[callerID.toString()+"name"] = name.value;
-            valuesNew[callerID.toString()+"desc"] = desc.value;
-            valuesNew[callerID.toString()+"amnt"] = amnt.value;
-            console.log(valuesNew);
-                // Ievieto skriptu, kas ievieto nolasītos datus DB, kad tā uzstādīta
-            
-            // Pārveidošana uz prastiem teksta blāķiem
-            var updatedName = document.createElement('p');
-            updatedName.setAttribute("class", "invName");
-            updatedName.innerHTML = name.value;
+        editCncl.setAttribute("onclick", 'editCancel("'+callerID+'")');
+        fatherButtons.getElementsByTagName("button")[1].replaceWith(editCncl);
+    }
 
-            var updatedDesc = document.createElement('p');
-            updatedDesc.setAttribute("class", "invDesc");
-            updatedDesc.innerHTML = desc.value;
+    // Saglabā ievadītos datus par izmaiņām
+    function editConfirm(callerID) {
+        // Atlasa ievadlaukus, no kuriem jāievāc dati
+        callerID = callerID.toString();
+        var father = document.getElementById(callerID);
+        var name = father.getElementsByTagName("textarea")[0];
+        var desc = father.getElementsByTagName("textarea")[1];
+        var amnt = father.getElementsByTagName("input")[0];
 
-            var updatedAmnt = document.createElement('p');
-            updatedAmnt.setAttribute("class", "invAmnt");
-            updatedAmnt.innerHTML = amnt.value + valuesOld[callerID.toString()+"amnt"].substring(valuesOld[callerID.toString()+"amnt"].indexOf(' '));
+        // Nosūtīšana uz datubāzi
+        valuesNew[callerID+"name"] = name.value;
+        valuesNew[callerID+"desc"] = desc.value;
+        valuesNew[callerID+"amnt"] = amnt.value;
+        console.log(valuesNew);
+            // Ievieto skriptu, kas ievieto nolasītos datus DB, kad tā uzstādīta
+        
+        // Pārveidošana uz prastiem teksta blāķiem
+        var updatedName = document.createElement('p');
+        updatedName.setAttribute("class", "invName");
+        updatedName.innerHTML = name.value;
 
-            // Pārveidojam ievadlaukus uz teksta blāķiem
-            name.replaceWith(updatedName);
-            desc.replaceWith(updatedDesc);
-            amnt.replaceWith(updatedAmnt);
+        var updatedDesc = document.createElement('p');
+        updatedDesc.setAttribute("class", "invDesc");
+        updatedDesc.innerHTML = desc.value;
 
-            // pogu labotājfunkcija
-            editButtons(callerID);
-        }
-        // Atceļ labošanas mainīgos, un atgriež iepriekšējos saglabātos datus
-        function editCancel(callerID) {
-            // Atlasa ievadlaukus, no kuriem jāievāc dati
-            var name = document.getElementById(callerID.toString()).getElementsByTagName("textarea")[0];
-            var desc = document.getElementById(callerID.toString()).getElementsByTagName("textarea")[1];
-            var amnt = document.getElementById(callerID.toString()).getElementsByTagName("input")[0];
-            
-            // Pārveidošana uz prastiem teksta blāķiem
-            var updatedName = document.createElement('p');
-            updatedName.setAttribute("class", "invName");
-            updatedName.innerHTML = valuesOld[callerID.toString()+"name"];
+        var updatedAmnt = document.createElement('p');
+        updatedAmnt.setAttribute("class", "invAmnt");
+        updatedAmnt.innerHTML = amnt.value + 
+            valuesOld[callerID+"amnt"].substring(valuesOld[callerID+"amnt"].indexOf(' '));
 
-            var updatedDesc = document.createElement('p');
-            updatedDesc.setAttribute("class", "invDesc");
-            updatedDesc.innerHTML = valuesOld[callerID.toString()+"desc"];
+        // Pārveidojam ievadlaukus uz teksta blāķiem
+        name.replaceWith(updatedName);
+        desc.replaceWith(updatedDesc);
+        amnt.replaceWith(updatedAmnt);
 
-            var updatedAmnt = document.createElement('p');
-            updatedAmnt.setAttribute("class", "invDesc");
-            updatedAmnt.innerHTML = valuesOld[callerID.toString()+"amnt"];
+        // pogu labotājfunkcija
+        editButtons(callerID);
+    }
 
-            // Pārveidojam ievadlaukus uz teksta blāķiem
-            name.replaceWith(updatedName);
-            desc.replaceWith(updatedDesc);
-            amnt.replaceWith(updatedAmnt);
+    // Atceļ labošanas mainīgos, un atgriež iepriekšējos saglabātos datus
+    function editCancel(callerID) {
+        // Atlasa ievadlaukus, no kuriem jāievāc dati
+        callerID = callerID.toString();
+        var father = document.getElementById(callerID);
+        var name = father.getElementsByTagName("textarea")[0];
+        var desc = father.getElementsByTagName("textarea")[1];
+        var amnt = father.getElementsByTagName("input")[0];
+        
+        // Teksta blāķu izveide
+        var updatedName = document.createElement('p');
+        updatedName.setAttribute("class", "invName");
+        updatedName.innerHTML = valuesOld[callerID+"name"];
 
-            // pogu labotājfunkcija
-            editButtons(callerID);
-        }
-        // Nomaina pogas no "Labot" un "Dzēst" atpakaļ uz "Mainīt" un "Atcelt"
-        function editButtons(callerID) {
-            editChange.setAttribute("onclick", 'editFields("'+callerID+'")');
-            document.getElementById(callerID.toString()).getElementsByClassName("editButtons")[0].getElementsByTagName("button")[0].replaceWith(editChange);
+        var updatedDesc = document.createElement('p');
+        updatedDesc.setAttribute("class", "invDesc");
+        updatedDesc.innerHTML = valuesOld[callerID+"desc"];
 
-            document.getElementById(callerID.toString()).getElementsByClassName("editButtons")[0].getElementsByTagName("button")[1].replaceWith(editDelete);
-        }
+        var updatedAmnt = document.createElement('p');
+        updatedAmnt.setAttribute("class", "invDesc");
+        updatedAmnt.innerHTML = valuesOld[callerID+"amnt"];
+
+        // Pārveidojam ievadlaukus uz teksta blāķiem
+        name.replaceWith(updatedName);
+        desc.replaceWith(updatedDesc);
+        amnt.replaceWith(updatedAmnt);
+
+        // pogu labotājfunkcija
+        editButtons(callerID);
+    }
+
+    // Nomaina pogas no "Labot" un "Dzēst" atpakaļ uz "Mainīt" un "Atcelt"
+    function editButtons(callerID) {
+        var fatherButtons = document.getElementById(callerID).getElementsByClassName("editButtons")[0];
+        editChange.setAttribute("onclick", 'editFields("'+callerID+'")');
+        //editChange.setAttribute("onclick", 'removeEquip("'+callerID+'")');
+
+        fatherButtons.getElementsByTagName("button")[0].replaceWith(editChange);
+        fatherButtons.getElementsByTagName("button")[1].replaceWith(editDelete);
+    }
 @endsection

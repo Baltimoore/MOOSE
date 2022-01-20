@@ -35,6 +35,10 @@ body {
     background-color: tomato;
     color: var(--logo-outline);
 }
+.moose-cancel {
+        background-color: var(--logo-fur-light);
+        color:var(--logo-outline);
+}
 
 /* popupu izskats */
 .w3-modal-content > header, .w3-modal-content > footer{
