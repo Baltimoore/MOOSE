@@ -34,19 +34,34 @@
 .videoName {
     font-weight: bold;
 }
-
 .vidArea > div > textarea {
     height: 100px;
     text-align: center;
     resize: vertical;
 }
-div.editButtons {}
-    div.editButtons > button { padding: 5px 15px; margin: 3px 0 }
-    div.editButtons > button:first-child { margin-top:10px; }
-    div.editButtons > button:last-child { margin-bottom:10px; }
-    div.editButtons > .moose-warn { padding: 5px 11px; }
-    div.editButtons > .moose-cancel { padding: 5px 13px; }
 
+/* Pogu izmēri */
+    div.editButtons > button { padding: 5px 15px; margin: 3px 0 }
+    div.editButtons > button:first-child { margin-top: 10px; }
+    div.editButtons > button:last-child, #addConfirm { margin-bottom: 10px; }
+    div.editButtons > .moose-warn { padding: inherit 11px; }
+    div.editButtons > .moose-cancel { padding: inherit 13px; }
+
+/* Videoieraksta pievienošanas poga */
+#userCreate {
+    margin-top:15px;
+    margin-bottom:-15px;
+    width:100%;
+}
+
+/* Popup aizvēršanas poga */
+.addButton {
+    position: absolute;
+    font-size: 20pt;
+    top: -21px;
+    right: -20px;
+    padding: 0px 12px;
+}
 @endsection
 
 @section('moduleTitle')
@@ -56,6 +71,9 @@ Lietotāju saraksts
 @section('moduleContent')
     {{-- Moduļa galvenā satura sadaļa --}}
 <div id="videoWrapper">
+    <a id="userCreate" class="w3-button w3-round-large"
+    onclick="document.getElementById('videoAdd').setAttribute('style','display:block;')">Augšupielādēt jaunu ierakstu</a>
+
     <div id="userHead" class="vidArea">
         <div id="vid1">
             <div class="videoThumb">
@@ -119,12 +137,47 @@ Lietotāju saraksts
         </div>
     </div>
 </div>
+
+<div id="videoAdd" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+        <header class="w3-container">
+            <span class="w3-button w3-circle addButton w3-display-topright"
+                onclick='document.getElementById("videoAdd").setAttribute("style", "")'>&times;</span>
+            <h2 id="addWhat">Pievienot ierakstu</h2>
+        </header>
+        <div class="w3-container">
+            <div class="w3-row-padding">
+                <div class="w3-col m6 l10">
+                    <label>Ieraksta uzņemšanas datums</label>
+                    <input id="addDate" class="w3-input w3-round-large" type="date" required>
+                </div>
+                <div class="w3-col m6 l2">
+                    <label>Pievienot video failu</label>
+                    <input id="addFile" class="w3-input w3-round-large" type="file" accept=".mp4" required>
+                </div>
+            </div>
+            <div class="w3-row-padding">
+                <div class="w3-col">
+                    <label>Video ieraksta apraksts</label>
+                    <textarea id="addDescription" class="w3-input w3-round-large" style="resize:none"></textarea>
+                </div>
+            </div>
+
+            <a id="addConfirm" class="w3-button w3-round-large" href="#">Pievienot jaunu inventāru</a>
+        </div>
+        <footer class="w3-container">
+            <p>Palīgteksts atrodas šeit</p>
+        </footer>
+        </div>
+    </div>
 @endsection
 
 @section('moduleScripts')
+    //
+
     // Labošanas funkcionalitātes ārējie mainīgie
-    const valuesOld = [];
-    const valuesNew = [];
+        const valuesOld = [];
+        const valuesNew = [];
     // Labošanā izmantoto pogu definīcijas
     // (lai nav atkārtoti jāveido tās katru reizi kā notiek izmaiņas)
         const editCfrm = document.createElement('button');
