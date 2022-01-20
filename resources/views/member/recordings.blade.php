@@ -34,8 +34,8 @@
 .videoName {
     font-weight: bold;
 }
+textarea { height: 100px; }
 .vidArea > div > textarea {
-    height: 100px;
     text-align: center;
     resize: vertical;
 }
@@ -219,11 +219,13 @@ Lietotāju saraksts
         // Nomaina pogas   "Labot" un "Dzēst"   uz   "Mainīt" un "Atcelt"
         var fatherButtons = father.getElementsByClassName("editButtons")[0];
 
-        editCfrm.setAttribute("onclick", 'editConfirm("'+callerID+'")');
-        fatherButtons.getElementsByTagName("button")[0].replaceWith(editCfrm);
+        var insert = editCfrm.cloneNode(true);
+        insert.setAttribute("onclick", 'editConfirm("'+callerID+'")');
+        fatherButtons.getElementsByTagName("button")[0].replaceWith(insert);
 
-        editCncl.setAttribute("onclick", 'editCancel("'+callerID+'")');
-        fatherButtons.getElementsByTagName("button")[1].replaceWith(editCncl);
+        var insert = editCncl.cloneNode(true);
+        insert.setAttribute("onclick", 'editCancel("'+callerID+'")');
+        fatherButtons.getElementsByTagName("button")[1].replaceWith(insert);
     }
 
     // Saglabā ievadītos datus par izmaiņām
@@ -274,8 +276,9 @@ Lietotāju saraksts
         var fatherButtons = document.getElementById(callerID).getElementsByClassName("editButtons")[0];
         editChange.setAttribute("onclick", 'editFields("'+callerID+'")');
         //editChange.setAttribute("onclick", 'removeEquip("'+callerID+'")');
-
-        fatherButtons.getElementsByTagName("button")[0].replaceWith(editChange);
-        fatherButtons.getElementsByTagName("button")[1].replaceWith(editDelete);
+        var insert = editChange.cloneNode(true);
+        fatherButtons.getElementsByTagName("button")[0].replaceWith(insert);
+        insert = editDelete.cloneNode(true);
+        fatherButtons.getElementsByTagName("button")[1].replaceWith(insert);
     }
 @endsection
