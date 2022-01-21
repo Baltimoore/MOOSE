@@ -7,7 +7,9 @@
  - - - - - - - - - - - -->
 
 @section('globalStyles')
-    /* Nav nepieciešami globāli izskata mainīgie */
+#loginForm > div { padding-bottom: 30px; }
+#usrnm > label:first-child, #pswrd > label:first-child { font-weight: bold; }
+.error { color:orange; outline:var(--logo-outline) }
 @endsection
 
 @section('title')
@@ -25,14 +27,19 @@ Reģistrācija
         <h3 style="margin-bottom:-10px;color:var(--logo-fur-dark)">Mednieku Organizāciju Organizatoriskā Sistēma Extreme</h3>
         <h1 style="margin-bottom:3vh;color:var(--logo-outline)"><b>“MOOSE”</b></h1>
 
-        <div style="width:auto; max-width:400px; margin:auto">
-            <label for="uname"><b>Lietotājvārds</b></label>
-            <input class="w3-input w3-round-large" type="text" pattern="^[0-9]{6}-[0-9]{5}$" placeholder="123456-12345" id="uname" required>
-            <br>
-            <label for="psw"><b>Parole</b></label>
-            <input class="w3-input w3-round-large" type="password" placeholder="Ievadiet paroli" id="psw" required>
-            <br>
-            <a class="w3-button w3-round-large" onclick="loginRedirect()"><b>Pieslēgties</b></a>
+        <div id="loginForm" style="width:auto; max-width:400px; margin:auto">
+            <div id="usrnm">
+                <label>Lietotājvārds</label>
+                <input class="w3-input w3-round-large" type="text" pattern="^[0-9]{6}-[0-9]{5}$" placeholder="123456-12345" required>
+                <label class="error"></label>
+            </div>
+            <div id="pswrd">
+                <label for="pswrd">Parole</label>
+                <input class="w3-input w3-round-large" type="password" placeholder="Ievadiet paroli" required>
+                <label class="error"></label>
+            </div>
+
+            <a class="w3-button w3-round-large" onclick="unameCheck()"><b>Pieslēgties</b></a>
             <br>
             <label><input class="w3-check" type="checkbox" checked="checked"> Saglabāt lietotājvārdu</label>
         </div>
@@ -41,17 +48,34 @@ Reģistrācija
 
 @section('scripts')
     // Nosaka, uz kādu skatu novirzīt pieslēgušos lietotāju
-    // Drīzāk gan vajadzētu izveidot pārbaudi uz datubāzi, bet es to nu gan nemāku izdarīt tagad :D
-    function loginRedirect(){
-        var nField = document.getElementById("uname");
+    // Vajadzētu izveidot pārbaudi uz datubāzi, bet es to nu gan nemāku izdarīt tagad :D
+    function unameCheck(){
+    // Atlasam izmantojamos elementus un nolasam lietotājvārda vērtību
+        var nDiv = document.getElementById("usrnm");
+        var nAfter = nDiv.getElementsByClassName("error")[0];
+        var nField = nDiv.getElementsByTagName("input")[0];
         var name = nField.value;
 
-        // Lietotājs ir administrators
+    // Noņemam esošos formatējumus
+        nField.setAttribute("style", "");
+        nAfter.innerHTML = "";
+
+    // Lietotājs ir administrators
         if (name == "adminCredentials") { window.location = "/home" }
-        // Lietotājvārds ir personas kods
+    // Lietotājvārds ir pareizi noformēts personas kods
+        // (jeb lietotājs ir medību biedrības dalībnieks)
         else if (RegExp(nField.getAttribute("pattern")).test(name)) {
             // te vēl varētu pārbaudīt, vai ir reģistrēts datubāzē
-            window.location = "/map"
+            window.location = "/map";
+        }
+    // Lietotājvārda nederīguma paziņojums lietotājam
+        else {
+            nField.setAttribute("style", "outline:solid 2px orange");
+                 if (name == "") { nAfter.innerHTML = "Lietotājvārds nedrīkst būt tukšs!"; }
+            else if (RegExp(/^\d+$/).test(name)) { nAfter.innerHTML = "Trūkst domuzīmes!"; }
+            else if (RegExp(/^\d{0,}-\d{0,}$/).test(name)) { nAfter.innerHTML = "Ciparu skaits nav pareizs!"; }
+            else if (RegExp(/\D/).test(name)) { nAfter.innerHTML = "Jābūt tikai cipariem un vienai domuzīmei!"; }
+            else { nAfter.innerHTML = "Nederīgs lietotājvārds"; }
         }
     }
 @endsection
