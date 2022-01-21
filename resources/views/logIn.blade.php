@@ -22,7 +22,8 @@ Reģistrācija
     <div class="w3-container w3-center">
         <img style="height:40vh;max-height:700px;max-width:700px;"
              src="/images/logo.svg" alt="Medību biedrības logo">
-        <h1 style="margin-bottom: 5vh"><b>Mednieku biedrība "Alnis"</b></h1>
+        <h3 style="margin-bottom:-10px;color:var(--logo-fur-dark)">Mednieku Organizāciju Organizatoriskā Sistēma Extreme</h3>
+        <h1 style="margin-bottom:3vh;color:var(--logo-outline)"><b>“MOOSE”</b></h1>
 
         <div style="width:auto; max-width:400px; margin:auto">
             <label for="uname"><b>Lietotājvārds</b></label>

@@ -30,7 +30,7 @@
     #societyList > div {
         padding: 10px 0;
         display: grid;
-        grid-template-columns: auto 125px 115px;
+        grid-template-columns: 50px auto 125px 115px;
         align-items: center;
         text-align: center;
         border-bottom: 1px dashed var(--logo-fur-light);
@@ -40,8 +40,9 @@
 .socName { font-weight: bold; }
 
 #societyList > div > textarea {
-    height: 50px;
-    width: 350px;
+    height: 40px; width: 275px;
+    min-height: 40px;
+    margin-left: 15px;
     text-align: center;
     resize: vertical;
 }
@@ -95,56 +96,67 @@ MOOSE sistēma @yield('popupTitle')
 
     <div id="societyList">
         <div id="soc1">
+            <div class="socLogo"><img src="/images/logo.svg" alt="Biedrības logo"></div>
             <p class="socName">Mednieku biedrība "Alnis"</p>
             <button class="w3-button w3-round-large" onclick='editFields("soc1")'>Pārdēvēt</button>
             <button class="moose-delete w3-button w3-round-large">Dzēst</button>
         </div>
         <div id="soc2">
+            <div class="socLogo"><img src="/images/logo.svg" alt="Biedrības logo"></div>
             <p class="socName">Mednieku organizācija "Briedis</p>
             <button class="w3-button w3-round-large" onclick='editFields("soc2")'>Pārdēvēt</button>
             <button class="moose-delete w3-button w3-round-large">Dzēst</button>
         </div>
         <div id="soc3">
+            <div class="socLogo"><img src="/images/logo.svg" alt="Biedrības logo"></div>
             <p class="socName">Mednieku klubs "Vērši"</p>
             <button class="w3-button w3-round-large" onclick='editFields("soc3")'>Pārdēvēt</button>
             <button class="moose-delete w3-button w3-round-large">Dzēst</button>
         </div>
         <div id="soc4">
+            <div class="socLogo"><img src="/images/logo.svg" alt="Biedrības logo"></div>
             <p class="socName">Mednieku biedrība "Bebrs"</p>
             <button class="w3-button w3-round-large" onclick='editFields("soc4")'>Pārdēvēt</button>
             <button class="moose-delete w3-button w3-round-large">Dzēst</button>
         </div>
         <div id="soc5">
+            <div class="socLogo"><img src="/images/logo.svg" alt="Biedrības logo"></div>
             <p class="socName">Medību pulks "Savanna"</p>
             <button class="w3-button w3-round-large" onclick='editFields("soc5")'>Pārdēvēt</button>
             <button class="moose-delete w3-button w3-round-large">Dzēst</button>
         </div>
         <div id="soc6">
+            <div class="socLogo"><img src="/images/logo.svg" alt="Biedrības logo"></div>
             <p class="socName">Mednieku biedrība "Mežacūka"</p>
             <button class="w3-button w3-round-large" onclick='editFields("soc6")'>Pārdēvēt</button>
             <button class="moose-delete w3-button w3-round-large">Dzēst</button>
         </div>
         <div id="soc7">
+            <div class="socLogo"><img src="/images/logo.svg" alt="Biedrības logo"></div>
             <p class="socName">Medību kolektīvs "Lapsa"</p>
             <button class="w3-button w3-round-large" onclick='editFields("soc7")'>Pārdēvēt</button>
             <button class="moose-delete w3-button w3-round-large">Dzēst</button>
         </div>
         <div id="soc8">
+            <div class="socLogo"><img src="/images/logo.svg" alt="Biedrības logo"></div>
             <p class="socName">Medību sanāksme "Lūši"</p>
             <button class="w3-button w3-round-large" onclick='editFields("soc8")'>Pārdēvēt</button>
             <button class="moose-delete w3-button w3-round-large">Dzēst</button>
         </div>
         <div id="soc9">
+            <div class="socLogo"><img src="/images/logo.svg" alt="Biedrības logo"></div>
             <p class="socName">Studentu medību sapulce "Poters ar Bisi"</p>
             <button class="w3-button w3-round-large" onclick='editFields("soc9")'>Pārdēvēt</button>
             <button class="moose-delete w3-button w3-round-large">Dzēst</button>
         </div>
         <div id="soc10">
+            <div class="socLogo"><img src="/images/logo.svg" alt="Biedrības logo"></div>
             <p class="socName">Mednieku kolektīvs "Ilkniz"</p>
             <button class="w3-button w3-round-large" onclick='editFields("soc10")'>Pārdēvēt</button>
             <button class="moose-delete w3-button w3-round-large">Dzēst</button>
         </div>
         <div id="soc11">
+            <div class="socLogo"><img src="/images/logo.svg" alt="Biedrības logo"></div>
             <p class="socName">Gvido Hotuļeva biedrība "Pusmūžā"</p>
             <button class="w3-button w3-round-large" onclick='editFields("soc11")'>Pārdēvēt</button>
             <button class="moose-delete w3-button w3-round-large">Dzēst</button>
